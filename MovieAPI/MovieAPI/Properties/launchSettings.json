@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MovieAPI": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "EpkaEnv": "local"
+      }
+    }
+  }
+}

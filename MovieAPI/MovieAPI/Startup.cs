@@ -22,13 +22,16 @@ namespace MovieAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // TODO: register all services
+        // TODO: add swagger, swagger-ui
+        // TODO: register other important options
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // TODO: read about injecting IOption to this method (why to use it)
+        // TODO: add swagger and endpoints routes
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -37,8 +40,6 @@ namespace MovieAPI
             }
 
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

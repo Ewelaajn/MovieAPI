@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <UserSecretsId>49648a0a-001c-4436-9ff0-28b9371d2aa6</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp" Version="106.11.5" />
+    <PackageReference Include="RestSharp.Newtonsoft.Json" Version="1.5.1" />
+  </ItemGroup>
+
+</Project>
