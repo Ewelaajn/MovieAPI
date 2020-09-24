@@ -1,26 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
+﻿using System.Net.Mime;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
-using MovieApi.Omdb.Client;
+using MovieApi.Services;
+
 
 namespace MovieAPI.Controllers
 {
     [Produces(MediaTypeNames.Application.Json)]
     public class MovieController : ApiControllerBase
     {
-        [HttpGet]
-        [Route("~/movie_by_title/{title}")]
-        public async Task<IActionResult> MovieByTitle(string title)
+        private readonly IMovieService _service;
+
+        public MovieController(IMovieService service)
         {
-            var omdbApi = new OmdbClient();
+            _service = service;
+        }
 
-            var result = await omdbApi.MovieByName(title);
-
-            return Json(result);
+        [HttpGet]
+        [Route("~/search/movie_by_title/{title}")]
+        public async Task<IActionResult> SearchMovieByTitle(string title, int page=1)
+        {
+            var results = await _service.SearchMoviesByTitle(title, page);
+            return Ok(results);
         }
     }
 }

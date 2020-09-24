@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using MovieApi.Omdb.Client;
+using MovieApi.Services;
+using MovieApi.Services.Settings;
+using RestSharp;
 
 namespace MovieAPI
 {
@@ -27,23 +25,44 @@ namespace MovieAPI
         // TODO: register other important options
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IMovieService, MovieService>();
+            services.AddScoped<IOmdbClient, OmdbClient>();
+
             services.AddControllers();
+
+            services.AddOptions().Configure<ApiSettings>(Configuration.GetSection("ApiSettings"));
+            services.AddOptions().Configure<OmdbApiSettings>(Configuration.GetSection("ExternalApis:OmdbApi"));
+            
+            services.AddMvcCore(options => { options.EnableEndpointRouting = false; }).AddApiExplorer()
+                .AddControllersAsServices();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Movie API",
+                    Version = "0.0.1",
+                    Description = "Api for movie enthusiast."
+                });
+            });
         }
 
         // TODO: read about injecting IOption to this method (why to use it)
         // TODO: add swagger and endpoints routes
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
             {
-                endpoints.MapControllers();
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie API");
+                c.RoutePrefix = string.Empty;
             });
         }
     }

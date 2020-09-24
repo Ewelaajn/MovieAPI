@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MovieApi.Omdb.Client\MovieApi.Omdb.Client.csproj" />
+  </ItemGroup>
+
 </Project>

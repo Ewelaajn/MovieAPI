@@ -10,13 +10,24 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.8" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.8" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.8" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.6.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MovieApi.Omdb.Client\MovieApi.Omdb.Client.csproj" />
+    <ProjectReference Include="..\MovieApi.Services\MovieApi.Services.csproj" />
   </ItemGroup>
 
 

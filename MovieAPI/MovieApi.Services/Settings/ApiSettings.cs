@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MovieApi.Services.Settings
+﻿namespace MovieApi.Services.Settings
 {
     // TODO: map json on objects, 
     // TODO: add rest of objects from config

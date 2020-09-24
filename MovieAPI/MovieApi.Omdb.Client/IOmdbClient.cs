@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using MovieApi.Omdb.Client.Models;
 
 namespace MovieApi.Omdb.Client
 {
     public interface IOmdbClient
     {
-        Task<object> MovieByName(string title);
+        Task<SearchResult> SearchVideoByTitle(string title, int page=1, string type="movie");
     }
 }
