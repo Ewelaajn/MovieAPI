@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MovieApi.Omdb.Client;
 using MovieApi.Services;
+using MovieApi.Services.Mappers;
 using MovieApi.Services.Settings;
 using RestSharp;
 
@@ -27,6 +28,7 @@ namespace MovieAPI
         {
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IOmdbClient, OmdbClient>();
+            services.AddScoped<IMovieMapper, MovieMapper>();
 
             services.AddControllers();
 
@@ -34,7 +36,9 @@ namespace MovieAPI
             services.AddOptions().Configure<OmdbApiSettings>(Configuration.GetSection("ExternalApis:OmdbApi"));
             
             services.AddMvcCore(options => { options.EnableEndpointRouting = false; }).AddApiExplorer()
-                .AddControllersAsServices();
+                .AddControllersAsServices()
+                .AddApiExplorer()
+                .AddNewtonsoftJson();
 
             services.AddSwaggerGen(c =>
             {

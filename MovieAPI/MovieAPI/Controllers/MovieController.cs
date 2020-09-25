@@ -23,5 +23,13 @@ namespace MovieAPI.Controllers
             var results = await _service.SearchMoviesByTitle(title, page);
             return Ok(results);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> MovieByTitle(string title)
+        {
+            var movie = await _service.SingleMovieByTitle(title);
+
+            return Ok(movie);
+        }
     }
 }

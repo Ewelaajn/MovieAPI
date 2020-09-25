@@ -44,5 +44,19 @@ namespace MovieApi.Omdb.Client
 
             return response;
         }
+
+        public async Task<Movie> SingleMovieByTitle(string title, string type = "movie")
+        {
+            var request = new RestRequest(Method.GET)
+                .AddQueryParameter(_settings.QueryParams.ApiKey, _settings.ApiKey)
+                .AddQueryParameter(_settings.QueryParams.SingleMovieByTitle, title)
+                .AddQueryParameter(_settings.QueryParams.SearchByType, type)
+                .AddQueryParameter(_settings.QueryParams.DataTypeToReturn, "json")
+                .AddHeader("Accept", "application/json");
+
+            var response = await _client.GetAsync<Movie>(request);
+
+            return response;
+        }
     }
 }
