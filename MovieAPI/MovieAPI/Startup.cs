@@ -20,10 +20,6 @@ namespace MovieAPI
         }
 
         public IConfiguration Configuration { get; }
-
-        // TODO: register all services
-        // TODO: add swagger, swagger-ui
-        // TODO: register other important options
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IMovieService, MovieService>();

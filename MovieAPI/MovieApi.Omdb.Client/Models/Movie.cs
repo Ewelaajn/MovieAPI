@@ -38,5 +38,11 @@ namespace MovieApi.Omdb.Client.Models
     {
         public string Source { get; set; }
         public string Value { get; set; }
+
+        public Ratings(string source, string value)
+        {
+            Source = source;
+            Value = value;
+        }
     }
 }
