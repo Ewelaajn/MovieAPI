@@ -22,25 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f205a539-d565-4f90-9fac-da8232474aba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieAPI.sln" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieAPI/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/ApiControllerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieAPI/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieAPI/Controllers/MovieController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/Controllers/MovieController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieAPI/MovieAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/MovieAPI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieAPI/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieAPI/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieAPI/appsettings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/appsettings.local.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi.Omdb.Client/IOmdbClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Omdb.Client/IOmdbClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi.Omdb.Client/MovieApi.Omdb.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Omdb.Client/MovieApi.Omdb.Client.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbParameters.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi.Services/MovieApi.Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/MovieApi.Services.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Settings/ApiSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Settings/ApiSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-    </list>
+    <list default="true" id="f205a539-d565-4f90-9fac-da8232474aba" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +32,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B2641CF8-C2C2-4492-8CC6-29D4D53FF2A0/D/RestClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B2641CF8-C2C2-4492-8CC6-29D4D53FF2A0/14/Parameter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B2641CF8-C2C2-4492-8CC6-29D4D53FF2A0/1D/Ensure.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F680C866-D120-4163-9634-EBD842255BE9/F3/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B2641CF8-C2C2-4492-8CC6-29D4D53FF2A0/17/RestRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/36/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/25F/AsyncMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/66/Char.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/2E/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/3DC/List.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -61,15 +51,24 @@
         <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/Models/Search.cs" />
         <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/Models/SearchModel.cs" />
         <option value="$PROJECT_DIR$/MovieApi.Services/Models/SearchResultDto.cs" />
-        <option value="$PROJECT_DIR$/MovieApi.Services/Models/FoundMoviesDto.cs" />
-        <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/Models/SearchResult.cs" />
-        <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs" />
         <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/IOmdbClient.cs" />
         <option value="$PROJECT_DIR$/MovieApi.Services/IMovieService.cs" />
-        <option value="$PROJECT_DIR$/MovieApi.Services/MovieService.cs" />
         <option value="$PROJECT_DIR$/MovieAPI/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/MovieAPI/Controllers/MovieController.cs" />
         <option value="$PROJECT_DIR$/MovieAPI/Startup.cs" />
+        <option value="$PROJECT_DIR$/MovieApi.Services/DateTimeFormat.cs" />
+        <option value="$PROJECT_DIR$/MovieApi.Services/DateTimeFormats.cs" />
+        <option value="$PROJECT_DIR$/MovieApi.Services/Models/FoundMoviesDto.cs" />
+        <option value="$PROJECT_DIR$/MovieApiTests/TestMovie.cs" />
+        <option value="$PROJECT_DIR$/MovieApiTests/TestBase.cs" />
+        <option value="$PROJECT_DIR$/MovieApi.Services/Models/MovieDto.cs" />
+        <option value="$PROJECT_DIR$/MovieApiTests/MovieModels/TestMovie.cs" />
+        <option value="$PROJECT_DIR$/MovieApiTests/MovieMapperTests.cs" />
+        <option value="$PROJECT_DIR$/MovieApiTests/MovieModels/TestMovieDto.cs" />
+        <option value="$PROJECT_DIR$/MovieApi.Services/MovieService.cs" />
+        <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/Models/SearchResult.cs" />
+        <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/Models/Movie.cs" />
+        <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs" />
       </list>
     </option>
   </component>
@@ -83,8 +82,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35006222" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29987556" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3498452" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.2995356" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -122,13 +121,18 @@
       <option name="presentableId" value="Default" />
       <updated>1600950915193</updated>
       <workItem from="1600950920890" duration="4555000" />
+      <workItem from="1601614943832" duration="434000" />
+      <workItem from="1601618319226" duration="3187000" />
+      <workItem from="1601624020629" duration="5999000" />
+      <workItem from="1601635052548" duration="543000" />
+      <workItem from="1601871773560" duration="79000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -140,111 +144,141 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2442" height="397" key="GridCell.Tab.0.bottom" timestamp="1600954650844">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state x="441" y="244" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1601635261308">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="441" y="244" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1366.728@0.0.1366.728" timestamp="1601635261308" />
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1601635599019">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601635599019" />
     <state width="2442" height="397" key="GridCell.Tab.0.bottom/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954650844" />
-    <state width="2442" height="397" key="GridCell.Tab.0.center" timestamp="1600954650844">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1601635599019">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601635599019" />
     <state width="2442" height="397" key="GridCell.Tab.0.center/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954650844" />
-    <state width="2442" height="397" key="GridCell.Tab.0.left" timestamp="1600954650844">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1601635599019">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601635599019" />
     <state width="2442" height="397" key="GridCell.Tab.0.left/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954650844" />
-    <state width="2442" height="397" key="GridCell.Tab.0.right" timestamp="1600954650844">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1601635599019">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601635599019" />
     <state width="2442" height="397" key="GridCell.Tab.0.right/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954650844" />
-    <state width="2442" height="514" key="GridCell.Tab.1.bottom" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.1.bottom" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.1.bottom/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.1.center" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.1.center" timestamp="1601635599019">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601635599019" />
     <state width="2442" height="514" key="GridCell.Tab.1.center/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.1.left" timestamp="1600954532730">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.1.left" timestamp="1601635599019">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601635599019" />
     <state width="2442" height="514" key="GridCell.Tab.1.left/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532730" />
-    <state width="2442" height="514" key="GridCell.Tab.1.right" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.1.right" timestamp="1601635599019">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601635599019" />
     <state width="2442" height="514" key="GridCell.Tab.1.right/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.2.bottom" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.2.bottom" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.2.bottom/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.2.center" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.2.center" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.2.center/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.2.left" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.2.left" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.2.left/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.2.right" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.2.right" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.2.right/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.3.bottom" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.3.bottom" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.3.bottom/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.3.center" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.3.center" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.3.center/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.3.left" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.3.left" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.3.left/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.3.right" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.3.right" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.3.right/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.4.bottom" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.4.bottom" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.4.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.4.bottom/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.4.center" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.4.center" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.4.center/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.4.center/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.4.left" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.4.left" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.4.left/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.4.left/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="2442" height="514" key="GridCell.Tab.4.right" timestamp="1600954532731">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="1323" height="161" key="GridCell.Tab.4.right" timestamp="1601635599020">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="161" key="GridCell.Tab.4.right/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.4.right/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
-    <state width="1246" height="706" key="XDebugger.FullValuePopup" timestamp="1600951591408">
-      <screen x="68" y="28" width="2492" height="1412" />
+    <state width="683" height="364" key="XDebugger.FullValuePopup" timestamp="1601627471488">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="683" height="364" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1601627471488" />
     <state width="1246" height="706" key="XDebugger.FullValuePopup/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600951591408" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1601621394921">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1601621394921" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs</url>
-          <line>42</line>
-          <properties documentPath="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs" initialLine="39">
+          <line>46</line>
+          <properties documentPath="C:\Users\epawlows\Downloads\MovieAPI\MovieAPI\MovieApi.Omdb.Client\OmdbClient.cs" initialLine="46">
             <startOffsets>
-              <option value="1549" />
+              <option value="1683" />
             </startOffsets>
             <endOffsets>
-              <option value="1577" />
+              <option value="2129" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

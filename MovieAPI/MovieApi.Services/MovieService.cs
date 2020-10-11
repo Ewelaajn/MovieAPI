@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using MovieApi.Omdb.Client;
 using MovieApi.Services.Mappers;
 using MovieApi.Services.Models;
-using RestSharp;
 
 namespace MovieApi.Services
 {
@@ -18,7 +17,7 @@ namespace MovieApi.Services
             _client = client;
             _mapper = mapper;
         }
-        
+
         public async Task<IEnumerable<FoundMoviesDto>> SearchMoviesByTitle(string title, int page = 1)
         {
             var movieResults = await _client.SearchVideoByTitle(title, page);

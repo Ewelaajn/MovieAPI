@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data;
+﻿using System.Collections.Generic;
 using RestSharp.Deserializers;
 
 namespace MovieApi.Omdb.Client.Models
@@ -23,9 +20,9 @@ namespace MovieApi.Omdb.Client.Models
         public string Awards { get; set; }
         public List<Ratings> Ratings { get; set; }
         public string Metascore { get; set; }
-        [DeserializeAs(Name="imdbRating")] public double? ImdbRating { get; set; }
-        [DeserializeAs(Name="imdbVotes")] public string ImdbVotes { get; set; }
-        [DeserializeAs(Name="imdbID")] public string ImdbId { get; set; }
+        [DeserializeAs(Name = "imdbRating")] public double? ImdbRating { get; set; }
+        [DeserializeAs(Name = "imdbVotes")] public string ImdbVotes { get; set; }
+        [DeserializeAs(Name = "imdbID")] public string ImdbId { get; set; }
         public string Type { get; set; }
         public string DVD { get; set; }
         public string BoxOffice { get; set; }
