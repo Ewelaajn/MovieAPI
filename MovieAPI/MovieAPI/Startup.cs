@@ -8,7 +8,6 @@ using MovieApi.Omdb.Client;
 using MovieApi.Services;
 using MovieApi.Services.Mappers;
 using MovieApi.Services.Settings;
-using RestSharp;
 
 namespace MovieAPI
 {
@@ -20,6 +19,7 @@ namespace MovieAPI
         }
 
         public IConfiguration Configuration { get; }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IMovieService, MovieService>();
@@ -30,7 +30,7 @@ namespace MovieAPI
 
             services.AddOptions().Configure<ApiSettings>(Configuration.GetSection("ApiSettings"));
             services.AddOptions().Configure<OmdbApiSettings>(Configuration.GetSection("ExternalApis:OmdbApi"));
-            
+
             services.AddMvcCore(options => { options.EnableEndpointRouting = false; }).AddApiExplorer()
                 .AddControllersAsServices()
                 .AddApiExplorer()

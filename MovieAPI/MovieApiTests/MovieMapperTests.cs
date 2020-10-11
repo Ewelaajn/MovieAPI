@@ -1,45 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Autofac;
 using FluentAssertions;
 using MovieApi.Services.Mappers;
-using MovieApiTests;
+using MovieApiTests.MovieModels;
 using NUnit.Framework;
 
 namespace MovieApiTests
 {
     [TestFixture]
-
     public class MovieMapperTests : TestBase
     {
-        private MovieMapper _movieMapper;
-
         [SetUp]
         public void SetUp()
         {
             _movieMapper = Container.Resolve<MovieMapper>();
         }
 
-        [Test]
-        public async Task ParseRuntime_Works_ReturnsRuntimeParsedOnInt()
-        {
-            var expectedResult = 124;
-
-            var result = await _movieMapper.ParseRuntime(TestMovie.Runtime);
-
-            result.Should().Be(expectedResult);
-        }
+        private MovieMapper _movieMapper;
 
         [Test]
-        public async Task ParseRuntime_ParameterIsNull_ReturnsNull()
+        public async Task MovieMapper_ValidParametersSupplied_ReturnsMovieDto()
         {
-            var runtime = "N/A";
+            var movie = new TestMovie();
+            var expectedResult = new TestMovieDto();
 
-            var result = await _movieMapper.ParseRuntime(runtime);
+            var result = await _movieMapper.MovieToDtoMapper(movie.Movie);
 
-            result.Should().BeNull();
+            result.Should().BeEquivalentTo(expectedResult);
         }
     }
 }

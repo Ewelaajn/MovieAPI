@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MovieApi.Services;
 
-
 namespace MovieAPI.Controllers
 {
     [Produces(MediaTypeNames.Application.Json)]
@@ -18,7 +17,7 @@ namespace MovieAPI.Controllers
 
         [HttpGet]
         [Route("~/search/movie_by_title/{title}")]
-        public async Task<IActionResult> SearchMovieByTitle(string title, int page=1)
+        public async Task<IActionResult> SearchMovieByTitle(string title, int page = 1)
         {
             var results = await _service.SearchMoviesByTitle(title, page);
             return Ok(results);
