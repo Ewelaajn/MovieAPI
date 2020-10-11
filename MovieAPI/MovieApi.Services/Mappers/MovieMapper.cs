@@ -38,10 +38,7 @@ namespace MovieApi.Services.Mappers
         {
             var minutesInString = value.Split(' ')[0];
 
-            if (int.TryParse(minutesInString, out var minutes))
-            {
-                return Task.FromResult<int?>(minutes);
-            }
+            if (int.TryParse(minutesInString, out var minutes)) return Task.FromResult<int?>(minutes);
 
             return Task.FromResult<int?>(null);
         }
@@ -50,7 +47,7 @@ namespace MovieApi.Services.Mappers
         {
             var genres = genreString.Split(',');
 
-            return Task.FromResult<IEnumerable<string>>(genres.Select(genre=>genre.Trim()));
+            return Task.FromResult(genres.Select(genre => genre.Trim()));
         }
 
         private Task<IEnumerable<Person>> ParsePerson(string personString)
@@ -59,7 +56,7 @@ namespace MovieApi.Services.Mappers
             var peopleList = people.Select(person =>
             {
                 var result = person.Trim().Split(' ')
-                    .Select(singleName=>singleName.Trim()).ToList();
+                    .Select(singleName => singleName.Trim()).ToList();
                 return new Person
                 {
                     FirstName = result[0],
@@ -67,7 +64,7 @@ namespace MovieApi.Services.Mappers
                 };
             });
 
-            return Task.FromResult<IEnumerable<Person>>(peopleList);
+            return Task.FromResult(peopleList);
         }
 
         private Task<IEnumerable<string>> ParseLanguages(string languageString)
@@ -98,8 +95,8 @@ namespace MovieApi.Services.Mappers
             var votesAsString = votesString.Replace(",", string.Empty);
 
             if (int.TryParse(votesString, out var votes))
-                return Task.FromResult<int?>(votes); 
-            
+                return Task.FromResult<int?>(votes);
+
             return Task.FromResult<int?>(null);
         }
 

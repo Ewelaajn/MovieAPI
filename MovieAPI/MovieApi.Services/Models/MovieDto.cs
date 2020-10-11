@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using RestSharp;
 using RestSharp.Deserializers;
 
 namespace MovieApi.Services.Models
@@ -14,7 +11,9 @@ namespace MovieApi.Services.Models
         public string Title { get; set; }
         public int? Year { get; set; }
         public string Rated { get; set; }
-        [JsonConverter(typeof(JustDateNoTimeConverter))] public DateTime? Released { get; set; }
+
+        [JsonConverter(typeof(JustDateNoTimeConverter))]
+        public DateTime? Released { get; set; }
 
         public int? RuntimeInMinutes { get; set; }
         public IEnumerable<string> Genres { get; set; }
@@ -29,7 +28,10 @@ namespace MovieApi.Services.Models
         [DeserializeAs(Name = "imdbRating")] public double? ImdbRating { get; set; }
         [DeserializeAs(Name = "imdbVotes")] public int? ImdbVotes { get; set; }
         [DeserializeAs(Name = "imdbID")] public string ImdbId { get; set; }
-        [JsonConverter(typeof(JustDateNoTimeConverter))] public DateTime? DVD { get; set; }
+
+        [JsonConverter(typeof(JustDateNoTimeConverter))]
+        public DateTime? DVD { get; set; }
+
         public string Production { get; set; }
     }
 
