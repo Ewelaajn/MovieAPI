@@ -8,19 +8,11 @@ namespace MovieApi.Services.Models
     {
         public string Title { get; set; }
 
-        [JsonConverter(typeof(DateNoTimeConverter))]
+        [JsonConverter(typeof(JustDateNoTimeConverter))]
         public DateTime? Year { get; set; }
 
         public string ImdbID { get; set; }
         public string Type { get; set; }
         public string Poster { get; set; }
-    }
-
-    public class DateNoTimeConverter : IsoDateTimeConverter
-    {
-        public DateNoTimeConverter()
-        {
-            DateTimeFormat = "dd-MM-yyyy";
-        }
     }
 }

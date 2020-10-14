@@ -34,24 +34,4 @@ namespace MovieApi.Services.Models
 
         public string Production { get; set; }
     }
-
-    public class Person
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-    }
-
-    public class Ratings
-    {
-        public string Source { get; set; }
-        public string Value { get; set; }
-    }
-
-    public class JustDateNoTimeConverter : IsoDateTimeConverter
-    {
-        public JustDateNoTimeConverter()
-        {
-            DateTimeFormat = "dd-MM-yyyy";
-        }
-    }
 }

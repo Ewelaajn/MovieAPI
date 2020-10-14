@@ -21,10 +21,10 @@ namespace MovieApiTests
         [Test]
         public async Task MovieMapper_ValidParametersSupplied_ReturnsMovieDto()
         {
-            var movie = new TestMovie();
-            var expectedResult = new TestMovieDto();
+            var movie = new TestMovie().Movie;
+            var expectedResult = new TestMovieDto().MovieDto;
 
-            var result = await _movieMapper.MovieToDtoMapper(movie.Movie);
+            var result = await _movieMapper.MovieToDtoMapper(movie);
 
             result.Should().BeEquivalentTo(expectedResult);
         }

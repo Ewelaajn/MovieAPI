@@ -1,17 +1,15 @@
 ﻿using System.Collections.Generic;
 using MovieApi.Omdb.Client.Models;
+using MovieApi.Services.Models;
 
 namespace MovieApiTests
 {
     public class TestMovie
-    {
+    { 
+        public Movie Movie { get; set; }
+
         public TestMovie()
         {
-            /*MovieRatings = new List<Ratings>
-            {
-                new Ratings ("Rotten Tomatoes", "80%"),
-                new Ratings ("Metacritic", "66/10")
-            };*/
 
             Movie = new Movie
             {
@@ -22,11 +20,9 @@ namespace MovieApiTests
                 Runtime = "124 min",
                 Genre = "Action, Adventure, Sci-Fi",
                 Director = "Joe Johnston",
-                Writer =
-                    "Christopher Markus (screenplay), Stephen McFeely (screenplay), Joe Simon (comic books), Jack Kirby (comic books)",
+                Writer = "Christopher Markus (screenplay), Stephen McFeely (screenplay), Joe Simon (comic books), Jack Kirby (comic books)",
                 Actors = "Chris Evans, Hayley Atwell, Sebastian Stan, Tommy Lee Jones",
-                Plot =
-                    "Steve Rogers, a rejected military soldier, transforms into Captain America after taking a dose of a \"Super-Soldier serum\". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.",
+                Plot = "Steve Rogers, a rejected military soldier, transforms into Captain America after taking a dose of a \"Super-Soldier serum\". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.",
                 Language = "English, Norwegian, French",
                 Country = "USA",
                 Awards = "4 wins & 46 nominations.",
@@ -56,7 +52,5 @@ namespace MovieApiTests
                 Response = "True"
             };
         }
-
-        public Movie Movie { get; set; }
     }
 }

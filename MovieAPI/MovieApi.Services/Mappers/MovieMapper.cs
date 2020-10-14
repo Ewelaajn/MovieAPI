@@ -22,7 +22,10 @@ namespace MovieApi.Services.Mappers
                 Director = await ParsePerson(movie.Director),
                 Writers = await ParsePerson(movie.Writer),
                 Actors = await ParsePerson(movie.Actors),
-                Languages = await ParseLanguages(movie.Language),
+                Languages = await ParseStringToEnumerable(movie.Language),
+                Countries = await ParseStringToEnumerable(movie.Country),
+                Awards = movie.Awards,
+                Ratings = movie.Ratings,
                 Metascore = await ParseMetascore(movie.Metascore),
                 ImdbRating = movie.ImdbRating,
                 ImdbVotes = await ParseImdbVotes(movie.ImdbVotes),
@@ -57,21 +60,33 @@ namespace MovieApi.Services.Mappers
             {
                 var result = person.Trim().Split(' ')
                     .Select(singleName => singleName.Trim()).ToList();
-                return new Person
+                if (result.Count <= 2 || result[2].StartsWith("("))
                 {
-                    FirstName = result[0],
-                    LastName = result[1]
-                };
+                    return new Person
+                    {
+                        FirstName = result[0],
+                        LastName = result[1]
+                    };
+                }
+                else
+                {
+                    return new Person
+                    {
+                        FirstName = string.Join(" ", result[0], result[1]),
+                        LastName = result[2]
+                    };
+                }
             });
 
             return Task.FromResult(peopleList);
         }
 
-        private Task<IEnumerable<string>> ParseLanguages(string languageString)
+        private Task<IEnumerable<string>> ParseStringToEnumerable(string longString)
         {
-            var languages = languageString.Split(',');
+            var enumerableString = longString.Split(',')
+                .Select(name => name.Trim());
 
-            return Task.FromResult<IEnumerable<string>>(languages);
+            return Task.FromResult<IEnumerable<string>>(enumerableString);
         }
 
         private Task<int?> ParseMetascore(string metascoreString)
@@ -94,7 +109,7 @@ namespace MovieApi.Services.Mappers
         {
             var votesAsString = votesString.Replace(",", string.Empty);
 
-            if (int.TryParse(votesString, out var votes))
+            if (int.TryParse(votesAsString, out var votes))
                 return Task.FromResult<int?>(votes);
 
             return Task.FromResult<int?>(null);

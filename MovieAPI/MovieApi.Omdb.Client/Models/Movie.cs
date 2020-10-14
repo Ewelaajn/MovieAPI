@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MovieApi.Services.Models;
 using RestSharp.Deserializers;
 
 namespace MovieApi.Omdb.Client.Models
@@ -29,11 +30,5 @@ namespace MovieApi.Omdb.Client.Models
         public string Production { get; set; }
         public string Website { get; set; }
         public string Response { get; set; }
-    }
-
-    public class Ratings
-    {
-        public string Source { get; set; }
-        public string Value { get; set; }
     }
 }

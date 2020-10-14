@@ -3,6 +3,7 @@ using Autofac;
 using Moq;
 using MovieApi.Omdb.Client.Models;
 using MovieApi.Services.Mappers;
+using MovieApi.Services.Models;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -37,7 +38,6 @@ namespace MovieApiTests
         private IRestClient BuildRestClient()
         {
             var mockRestClient = new Mock<IRestClient>();
-
 
             return mockRestClient.Object;
         }

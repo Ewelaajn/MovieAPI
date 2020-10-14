@@ -6,6 +6,8 @@ namespace MovieApiTests.MovieModels
 {
     public class TestMovieDto
     {
+        public MovieDto MovieDto { get; set; }
+
         public TestMovieDto()
         {
             MovieDto = new MovieDto
@@ -31,7 +33,7 @@ namespace MovieApiTests.MovieModels
                     new Person
                     {
                         FirstName = "Christopher",
-                        LastName = "Marcus"
+                        LastName = "Markus"
                     },
                     new Person
                     {
@@ -59,7 +61,7 @@ namespace MovieApiTests.MovieModels
                     },
                     new Person
                     {
-                        FirstName = "Heyley",
+                        FirstName = "Hayley",
                         LastName = "Atwell"
                     },
                     new Person
@@ -100,7 +102,5 @@ namespace MovieApiTests.MovieModels
                 Production = "Paramount Pictures"
             };
         }
-
-        public MovieDto MovieDto { get; set; }
     }
 }

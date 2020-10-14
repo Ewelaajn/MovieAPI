@@ -9,12 +9,8 @@ namespace MovieApi.Omdb.Client
     public class OmdbClient : IOmdbClient
     {
         private readonly IRestClient _client;
-        // TODO: temporary variables, must be change for IOptions pattern
-
-
         private readonly OmdbApiSettings _settings;
 
-        // TODO: Inject IOptions here
         public OmdbClient(
             IOptions<OmdbApiSettings> settings
         )
@@ -24,8 +20,6 @@ namespace MovieApi.Omdb.Client
             _client.Timeout = _settings.ConnectionTimeout;
         }
 
-        // TODO: add parameters that can be important
-        // TODO: try to create omdb client model with data what we need 
         public async Task<SearchResult> SearchVideoByTitle(string title, int page = 1, string type = "movie")
         {
             var request = new RestRequest(Method.GET)
