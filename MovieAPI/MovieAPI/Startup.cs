@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using MovieApi.Omdb.Client;
 using MovieApi.Services;
 using MovieApi.Services.Mappers;
+using MovieApi.Services.Mappers.MappingStrategy;
 using MovieApi.Services.Settings;
 
 namespace MovieAPI
@@ -25,6 +26,7 @@ namespace MovieAPI
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IOmdbClient, OmdbClient>();
             services.AddScoped<IMovieMapper, MovieMapper>();
+            services.AddScoped<IMovieMapperStrategy, MovieMapperStrategy>();
 
             services.AddControllers();
 

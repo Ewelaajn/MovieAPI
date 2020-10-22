@@ -2,13 +2,12 @@
 using Autofac;
 using FluentAssertions;
 using MovieApi.Services.Mappers;
-using MovieApiTests.MovieModels;
 using NUnit.Framework;
 
-namespace MovieApiTests
+namespace MovieApiTests.Services
 {
     [TestFixture]
-    public class MovieMapperTests : TestBase
+    public partial class MovieMapperTests : TestBase
     {
         [SetUp]
         public void SetUp()
@@ -21,8 +20,8 @@ namespace MovieApiTests
         [Test]
         public async Task MovieMapper_ValidParametersSupplied_ReturnsMovieDto()
         {
-            var movie = new TestMovie().Movie;
-            var expectedResult = new TestMovieDto().MovieDto;
+            var movie = Movie;
+            var expectedResult = MovieDto;
 
             var result = await _movieMapper.MovieToDtoMapper(movie);
 
