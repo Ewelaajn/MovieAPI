@@ -9,13 +9,13 @@ namespace MovieApiTests.Services
     [TestFixture]
     public partial class MovieMapperTests : TestBase
     {
+        private MovieMapper _movieMapper;
+        
         [SetUp]
         public void SetUp()
         {
             _movieMapper = Container.Resolve<MovieMapper>();
         }
-
-        private MovieMapper _movieMapper;
 
         [Test]
         public async Task MovieMapper_ValidParametersSupplied_ReturnsMovieDto()

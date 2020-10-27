@@ -10,16 +10,16 @@ namespace MovieApi.Services.Mappers
 {
     public class MovieMapper : IMovieMapper
     {
-        private readonly IMovieMapperStrategy _movieMapperStrategy;
+        /*private readonly IMovieMapperStrategy _movieMapperStrategy;
 
         public MovieMapper(IMovieMapperStrategy movieMapperStrategy)
         {
             _movieMapperStrategy = movieMapperStrategy;
-        }
+        }*/
 
         public async Task<MovieDto> MovieToDtoMapper(Movie movie)
         {
-            /*var movieDto = new MovieDto
+            var movieDto = new MovieDto
             {
                 Title = movie.Title,
                 Year = await ParseYear(movie.Year),
@@ -42,9 +42,9 @@ namespace MovieApi.Services.Mappers
                 Production = movie.Production
             };
 
-            return movieDto;*/
+            return movieDto;
 
-            return await _movieMapperStrategy.Process(movie);
+            /*return await _movieMapperStrategy.Process(movie);*/
         }
 
         private Task<int?> ParseRuntime(string value)
