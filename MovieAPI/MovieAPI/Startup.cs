@@ -5,9 +5,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MovieApi.Omdb.Client;
+using MovieApi.Repositories;
+using MovieApi.Repositories.Interfaces;
 using MovieApi.Services;
+using MovieApi.Services.Interfaces;
 using MovieApi.Services.Mappers;
 using MovieApi.Services.Mappers.MappingStrategy;
+using MovieApi.Services.Services;
 using MovieApi.Services.Settings;
 
 namespace MovieAPI
@@ -27,11 +31,14 @@ namespace MovieAPI
             services.AddScoped<IOmdbClient, OmdbClient>();
             services.AddScoped<IMovieMapper, MovieMapper>();
             services.AddScoped<IMovieMapperStrategy, MovieMapperStrategy>();
+            services.AddScoped<IDbContext, DbContext>();
+
 
             services.AddControllers();
 
             services.AddOptions().Configure<ApiSettings>(Configuration.GetSection("ApiSettings"));
             services.AddOptions().Configure<OmdbApiSettings>(Configuration.GetSection("ExternalApis:OmdbApi"));
+            services.AddOptions().Configure<DatabaseSettings>(Configuration.GetSection("Database"));
 
             services.AddMvcCore(options => { options.EnableEndpointRouting = false; }).AddApiExplorer()
                 .AddControllersAsServices()

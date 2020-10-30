@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MovieApi.Services.Models;
 
-namespace MovieApi.Services
+namespace MovieApi.Services.Interfaces
 {
     public interface IMovieService
     {

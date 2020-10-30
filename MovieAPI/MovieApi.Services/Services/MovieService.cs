@@ -2,10 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MovieApi.Omdb.Client;
+using MovieApi.Services.Interfaces;
 using MovieApi.Services.Mappers;
 using MovieApi.Services.Models;
 
-namespace MovieApi.Services
+namespace MovieApi.Services.Services
 {
     public class MovieService : IMovieService
     {
