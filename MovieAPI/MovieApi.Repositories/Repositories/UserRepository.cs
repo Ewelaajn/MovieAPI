@@ -18,13 +18,19 @@ namespace MovieApi.Repositories.Repositories
         }
         public async Task<User> CreateUser(User user)
         {
-            return await _dbContext.Connection.QueryFirstOrDefaultAsync<User>(Queries.UserQueries.CreateUser,
+            return await _dbContext.Connection.QueryFirstAsync<User>(Queries.UserQueries.CreateUser,
                 new {user.NickName, user.FirstName, user.LastName, user.Mail, user.Password});
         }
 
-        public async Task<bool> AuthenticateUser(User user)
+        public Task<string> FetchPassword(string mail)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<bool> IsMailTaken(string mail)
+        {
+            return await _dbContext.Connection.QueryFirstOrDefaultAsync<bool>
+            (Queries.UserQueries.IsMailTaken, new {mail});
         }
     }
 }

@@ -14,5 +14,8 @@ namespace MovieApi.Repositories.Queries
 
         public const string GetPasswordByMail = @" 
                             SELECT password FROM film.user WHERE mail = @mail";
+
+        public const string IsMailTaken = @"
+                            SELECT TRUE FROM film.user WHERE mail = @mails";
     }
 }

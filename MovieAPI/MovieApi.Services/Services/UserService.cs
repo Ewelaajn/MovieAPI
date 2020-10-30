@@ -3,6 +3,9 @@ using MovieApi.Services.Interfaces;
 using MovieApi.Services.Models;
 using System.Threading.Tasks;
 using MovieApi.Repositories.Interfaces;
+using MovieApi.Repositories.Models;
+using MovieApi.Services.Exceptions;
+using BCrypt.Net;
 
 namespace MovieApi.Services.Services
 {
@@ -14,9 +17,40 @@ namespace MovieApi.Services.Services
         {
             _userRepository = userRepository;
         }
-        public Task<UserDto> SignUp(UserSignUpDto user)
+
+        // BCrypt has "Verify" method
+        public async Task<UserDto> SignUp(UserSignUpDto user)
         {
-            throw new NotImplementedException();
+            if (!user.Password.Equals(user.PasswordConfirmation))
+            {
+                throw new IncorrectPasswordConfirmationException("Passwords are different!");
+            }
+
+            bool isMailTaken = await _userRepository.IsMailTaken(user.Mail);
+
+            if (!isMailTaken)
+            {
+                var userDb = new User
+                {
+                    NickName = user.NickName,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Mail = user.Mail,
+                    Password = BCrypt.Net.BCrypt.HashPassword(user.Password)
+                };
+
+                var result = await _userRepository.CreateUser(userDb);
+
+                return new UserDto
+                {
+                    NickName = result.NickName,
+                    FirstName = result.FirstName,
+                    LastName = result.LastName,
+                    Mail = result.Mail
+                };
+            }
+
+            throw new MailTakenException("This mail is already in database!");
         }
     }
 }

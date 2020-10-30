@@ -9,6 +9,7 @@ namespace MovieApi.Repositories.Interfaces
     public interface IUserRepository
     {
         Task<User> CreateUser(User user);
-        Task<bool> AuthenticateUser(User user);
+        Task<string> FetchPassword(string mail);
+        Task<bool> IsMailTaken(string mail);
     }
 }
