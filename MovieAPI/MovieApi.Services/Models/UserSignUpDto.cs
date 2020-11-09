@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MovieApi.Services.Models
+﻿namespace MovieApi.Services.Models
 {
     public class UserSignUpDto : UserDto
     {

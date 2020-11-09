@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace MovieApi.Services.Exceptions
 {
@@ -11,7 +9,8 @@ namespace MovieApi.Services.Exceptions
         {
         }
 
-        protected IncorrectPasswordConfirmationException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected IncorrectPasswordConfirmationException(SerializationInfo info, StreamingContext context) : base(info,
+            context)
         {
         }
 
@@ -19,7 +18,8 @@ namespace MovieApi.Services.Exceptions
         {
         }
 
-        public IncorrectPasswordConfirmationException(string message, Exception innerException) : base(message, innerException)
+        public IncorrectPasswordConfirmationException(string message, Exception innerException) : base(message,
+            innerException)
         {
         }
     }

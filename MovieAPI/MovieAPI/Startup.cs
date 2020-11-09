@@ -8,10 +8,10 @@ using MovieApi.Omdb.Client;
 using MovieApi.Repositories;
 using MovieApi.Repositories.Interfaces;
 using MovieApi.Repositories.Repositories;
-using MovieApi.Services;
 using MovieApi.Services.Interfaces;
 using MovieApi.Services.Mappers;
 using MovieApi.Services.Mappers.MappingStrategy;
+using MovieApi.Services.Mappers.MappingStrategy.Parsers;
 using MovieApi.Services.Services;
 using MovieApi.Services.Settings;
 
@@ -34,6 +34,7 @@ namespace MovieAPI
             services.AddScoped<IMovieMapperStrategy, MovieMapperStrategy>();
             services.AddScoped<IDbContext, DbContext>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPersonParser, PersonParser>();
 
 
             services.AddControllers();

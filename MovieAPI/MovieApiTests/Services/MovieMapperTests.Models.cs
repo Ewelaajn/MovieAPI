@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using MovieApi.Omdb.Client.Models;
 using MovieApi.Services.Models;
+using NUnit.Framework;
 
 namespace MovieApiTests.Services
 {
@@ -58,7 +58,7 @@ namespace MovieApiTests.Services
             Rated = "PG-13",
             Released = new DateTime(2011, 07, 22),
             RuntimeInMinutes = 124,
-            Genres = new List<string> { "Action", "Adventure", "Sci-Fi" },
+            Genres = new List<string> {"Action", "Adventure", "Sci-Fi"},
 
             Director = new List<Person>
             {
@@ -117,8 +117,8 @@ namespace MovieApiTests.Services
                 }
             },
 
-            Languages = new List<string> { "English", "Norwegian", "French" },
-            Countries = new List<string> { "USA" },
+            Languages = new List<string> {"English", "Norwegian", "French"},
+            Countries = new List<string> {"USA"},
             Awards = "4 wins & 46 nominations.",
 
             Ratings = new List<Ratings>
@@ -142,5 +142,61 @@ namespace MovieApiTests.Services
             DVD = new DateTime(2011, 10, 25),
             Production = "Paramount Pictures"
         };
+
+        public static IEnumerable<TestCaseData> PersonParserTestCaseSource
+        {
+            get
+            {
+                yield return new TestCaseData("FName LName", new List<Person>
+                {
+                    new Person
+                    {
+                        FirstName = "FName",
+                        LastName = "LName"
+                    }
+                });
+
+                yield return new TestCaseData("FName SName LName", new List<Person>
+                {
+                    new Person
+                    {
+                        FirstName = "FName",
+                        LastName = "LName"
+                    }
+                });
+
+                yield return new TestCaseData("FName LName (Role)", new List<Person>
+                {
+                    new Person
+                    {
+                        FirstName = "FName",
+                        LastName = "LName"
+                    }
+                });
+
+                yield return new TestCaseData("FName LName, FName LName", new List<Person>
+                {
+                    new Person
+                    {
+                        FirstName = "FName",
+                        LastName = "LName"
+                    },
+                    new Person
+                    {
+                        FirstName = "FName",
+                        LastName = "LName"
+                    }
+                });
+
+                yield return new TestCaseData("FName SName LName (Role)", new List<Person>
+                {
+                    new Person
+                    {
+                        FirstName = "FName",
+                        LastName = "LName"
+                    }
+                });
+            }
+        }
     }
 }

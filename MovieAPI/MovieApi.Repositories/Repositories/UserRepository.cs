@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
 using MovieApi.Repositories.Interfaces;
 using MovieApi.Repositories.Models;
+using MovieApi.Repositories.Queries;
 
 namespace MovieApi.Repositories.Repositories
 {
@@ -16,9 +15,10 @@ namespace MovieApi.Repositories.Repositories
         {
             _dbContext = dbContext;
         }
+
         public async Task<User> CreateUser(User user)
         {
-            return await _dbContext.Connection.QueryFirstAsync<User>(Queries.UserQueries.CreateUser,
+            return await _dbContext.Connection.QueryFirstAsync<User>(UserQueries.CreateUser,
                 new {user.NickName, user.FirstName, user.LastName, user.Mail, user.Password});
         }
 
@@ -30,7 +30,7 @@ namespace MovieApi.Repositories.Repositories
         public async Task<bool> IsMailTaken(string mail)
         {
             return await _dbContext.Connection.QueryFirstOrDefaultAsync<bool>
-            (Queries.UserQueries.IsMailTaken, new {mail});
+                (UserQueries.IsMailTaken, new {mail});
         }
     }
 }

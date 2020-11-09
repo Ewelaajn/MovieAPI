@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace MovieApi.Repositories.Models
+﻿namespace MovieApi.Repositories.Models
 {
     public class User
     {
@@ -12,6 +7,6 @@ namespace MovieApi.Repositories.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Mail { get; set; }
-        public string Password { get; set; }   
+        public string Password { get; set; }
     }
 }

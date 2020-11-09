@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MovieApi.Omdb.Client.Models;
-using MovieApi.Services.Mappers.MappingStrategy;
 using MovieApi.Services.Models;
 
 namespace MovieApi.Services.Mappers
@@ -71,21 +70,16 @@ namespace MovieApi.Services.Mappers
                 var result = person.Trim().Split(' ')
                     .Select(singleName => singleName.Trim()).ToList();
                 if (result.Count <= 2 || result[2].StartsWith("("))
-                {
                     return new Person
                     {
                         FirstName = result[0],
                         LastName = result[1]
                     };
-                }
-                else
+                return new Person
                 {
-                    return new Person
-                    {
-                        FirstName = string.Join(" ", result[0], result[1]),
-                        LastName = result[2]
-                    };
-                }
+                    FirstName = string.Join(" ", result[0], result[1]),
+                    LastName = result[2]
+                };
             });
 
             return Task.FromResult(peopleList);
@@ -96,7 +90,7 @@ namespace MovieApi.Services.Mappers
             var enumerableString = longString.Split(',')
                 .Select(name => name.Trim());
 
-            return Task.FromResult<IEnumerable<string>>(enumerableString);
+            return Task.FromResult(enumerableString);
         }
 
         private Task<int?> ParseMetascore(string metascoreString)

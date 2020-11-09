@@ -1,35 +1,58 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Threading.Tasks;
 using MovieApi.Omdb.Client.Models;
-using MovieApi.Services.Mappers.MappingStrategy.PropertyStrategies;
 using MovieApi.Services.Models;
 
 namespace MovieApi.Services.Mappers.MappingStrategy
 {
-    public class MovieMapperStrategy: IMovieMapperStrategy
+    public class MovieMapperStrategy : IMovieMapperStrategy
     {
-        private readonly IDictionary<string, object> _propertiesMappingStrategy;
-        public MovieMapperStrategy()
+        private readonly IMappingMoviePropertyStrategy _stringStrategy, _personStrategy, _integerStrategy;
+
+        public MovieMapperStrategy(
+            IMappingMoviePropertyStrategy stringStrategy,
+            IMappingMoviePropertyStrategy personStrategy,
+            IMappingMoviePropertyStrategy integerStrategy)
         {
-            _propertiesMappingStrategy = new Dictionary<string, object>
-            {
-                {"Title", new TitleMappingMoviePropertyStrategy()},
-                {"Actors", new ActorsMappingMoviePropertyStrategy()}
-            };
+            _stringStrategy = stringStrategy;
+            _personStrategy = personStrategy;
+            _integerStrategy = integerStrategy;
         }
 
         public Task<MovieDto> Process(Movie movie)
         {
-            var movieProperties = movie.GetType().GetProperties();
+            var properties = movie.GetType().GetProperties();
 
-            foreach (var propertyInfo in movieProperties)
+            foreach (var property in properties)
             {
-                string propertyName = propertyInfo.Name;
+                var name = property.Name;
+                var result = MapProperty(name).Process(property.GetValue(movie));
+                Console.WriteLine(result);
             }
 
             return Task.FromResult(new MovieDto());
+        }
+
+        private IMappingMoviePropertyStrategy MapProperty(string propertyName)
+        {
+            switch (propertyName)
+            {
+                case nameof(Movie.Title):
+                case nameof(Movie.Rated):
+                case nameof(Movie.Awards):
+                case nameof(Movie.ImdbId):
+                case nameof(Movie.Production):
+                    return _stringStrategy;
+                case nameof(Movie.Actors):
+                case nameof(Movie.Writer):
+                case nameof(Movie.Director):
+                    return _personStrategy;
+                case nameof(Movie.Year):
+                case nameof(Movie.Metascore):
+                    return _integerStrategy;
+                default:
+                    return null;
+            }
         }
     }
 }

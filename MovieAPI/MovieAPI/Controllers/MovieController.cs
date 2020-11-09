@@ -1,7 +1,6 @@
 ﻿using System.Net.Mime;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MovieApi.Services;
 using MovieApi.Services.Interfaces;
 
 namespace MovieAPI.Controllers
