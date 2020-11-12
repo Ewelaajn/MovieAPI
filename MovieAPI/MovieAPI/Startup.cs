@@ -57,15 +57,24 @@ namespace MovieAPI
                     Description = "Api for movie enthusiast."
                 });
             });
-        }
 
-        // TODO: read about injecting IOption to this method (why to use it)
-        // TODO: add swagger and endpoints routes
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication("Bearer", options =>
+                {
+                    options.ApiName = "v1";
+                    options.Authority = "https://localhost:9000";
+                });
+        }
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
             app.UseRouting();
+
+            app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 

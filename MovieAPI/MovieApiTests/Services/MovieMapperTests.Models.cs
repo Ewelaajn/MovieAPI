@@ -27,16 +27,8 @@ namespace MovieApiTests.Services
             Awards = "4 wins & 46 nominations.",
             Ratings = new List<Ratings>
             {
-                new Ratings
-                {
-                    Source = "Rotten Tomatoes",
-                    Value = "80%"
-                },
-                new Ratings
-                {
-                    Source = "Metacritic",
-                    Value = "66/10"
-                }
+                new Ratings {Source = "Rotten Tomatoes", Value = "80%"},
+                new Ratings {Source = "Metacritic", Value = "66/10"}
             },
 
             Metascore = "66",
@@ -62,59 +54,23 @@ namespace MovieApiTests.Services
 
             Director = new List<Person>
             {
-                new Person
-                {
-                    FirstName = "Joe",
-                    LastName = "Johnston"
-                }
+                new Person {FirstName = "Joe", LastName = "Johnston"}
             },
 
             Writers = new List<Person>
             {
-                new Person
-                {
-                    FirstName = "Christopher",
-                    LastName = "Markus"
-                },
-                new Person
-                {
-                    FirstName = "Stephen",
-                    LastName = "McFeely"
-                },
-                new Person
-                {
-                    FirstName = "Joe",
-                    LastName = "Simon"
-                },
-                new Person
-                {
-                    FirstName = "Jack",
-                    LastName = "Kirby"
-                }
+                new Person {FirstName = "Christopher", LastName = "Markus"},
+                new Person {FirstName = "Stephen", LastName = "McFeely"},
+                new Person {FirstName = "Joe", LastName = "Simon"},
+                new Person {FirstName = "Jack", LastName = "Kirby"}
             },
 
             Actors = new List<Person>
             {
-                new Person
-                {
-                    FirstName = "Chris",
-                    LastName = "Evans"
-                },
-                new Person
-                {
-                    FirstName = "Hayley",
-                    LastName = "Atwell"
-                },
-                new Person
-                {
-                    FirstName = "Sebastian",
-                    LastName = "Stan"
-                },
-                new Person
-                {
-                    FirstName = "Tommy Lee",
-                    LastName = "Jones"
-                }
+                new Person {FirstName = "Chris", LastName = "Evans"},
+                new Person {FirstName = "Hayley", LastName = "Atwell"},
+                new Person {FirstName = "Sebastian", LastName = "Stan"},
+                new Person {FirstName = "Tommy Lee", LastName = "Jones"}
             },
 
             Languages = new List<string> {"English", "Norwegian", "French"},
@@ -123,16 +79,8 @@ namespace MovieApiTests.Services
 
             Ratings = new List<Ratings>
             {
-                new Ratings
-                {
-                    Source = "Rotten Tomatoes",
-                    Value = "80%"
-                },
-                new Ratings
-                {
-                    Source = "Metacritic",
-                    Value = "66/10"
-                }
+                new Ratings {Source = "Rotten Tomatoes", Value = "80%"},
+                new Ratings {Source = "Metacritic", Value = "66/10"}
             },
 
             Metascore = 66,
@@ -149,53 +97,49 @@ namespace MovieApiTests.Services
             {
                 yield return new TestCaseData("FName LName", new List<Person>
                 {
-                    new Person
-                    {
-                        FirstName = "FName",
-                        LastName = "LName"
-                    }
+                    new Person {FirstName = "FName", LastName = "LName"}
                 });
 
                 yield return new TestCaseData("FName SName LName", new List<Person>
                 {
-                    new Person
-                    {
-                        FirstName = "FName",
-                        LastName = "LName"
-                    }
+                    new Person {FirstName = "FName", LastName = "LName"}
                 });
 
                 yield return new TestCaseData("FName LName (Role)", new List<Person>
                 {
-                    new Person
-                    {
-                        FirstName = "FName",
-                        LastName = "LName"
-                    }
+                    new Person {FirstName = "FName", LastName = "LName"}
                 });
 
                 yield return new TestCaseData("FName LName, FName LName", new List<Person>
                 {
-                    new Person
-                    {
-                        FirstName = "FName",
-                        LastName = "LName"
-                    },
-                    new Person
-                    {
-                        FirstName = "FName",
-                        LastName = "LName"
-                    }
+                    new Person {FirstName = "FName", LastName = "LName"},
+                    new Person {FirstName = "FName", LastName = "LName"}
                 });
 
                 yield return new TestCaseData("FName SName LName (Role)", new List<Person>
                 {
-                    new Person
-                    {
-                        FirstName = "FName",
-                        LastName = "LName"
-                    }
+                    new Person {FirstName = "FName", LastName = "LName"}
                 });
+            }
+        }
+        
+        public static IEnumerable<TestCaseData> StringToDateTimeStrategySource
+        {
+            get
+            {
+                yield return new TestCaseData("10-Jan-1950", new DateTime(10-01-1950));
+                yield return new TestCaseData("05-Feb-2010", new DateTime(05-01-2010));
+                yield return new TestCaseData("27-Aug-2020", new DateTime(27-08-2020));
+            }
+        }
+
+        public static IEnumerable<TestCaseData> StringToListStrategySource
+        {
+            get
+            {
+                yield return new TestCaseData("English, Polish, Spanish", new List<String>{"English", "Polish", "Spanish"});
+                yield return new TestCaseData("Thriller, Horror", new List<String>{"Thriller", "Horror"});
+                yield return new TestCaseData("Poland", new List<string>{"Poland"});
             }
         }
     }

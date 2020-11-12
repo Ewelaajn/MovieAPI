@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\epawlows\.nuget\packages\microsoft.net.test.sdk\16.4.0\build\netcoreapp2.1" t="Include">
+    <e p="C:\Users\epawl\.nuget\packages\microsoft.net.test.sdk\16.4.0\build\netcoreapp2.1" t="Include">
       <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
     </e>
-    <e p="C:\Users\epawlows\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
-    <e p="C:\Users\epawlows\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
-    <e p="C:\Users\epawlows\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\nunit.engine.api.dll" t="Include" />
-    <e p="C:\Users\epawlows\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\nunit.engine.dll" t="Include" />
-    <e p="C:\Users\epawlows\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\NUnit3.TestAdapter.dll" t="Include" />
-    <e p="C:\Users\epawlows\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\NUnit3.TestAdapter.pdb" t="Include" />
-    <e p="C:\Users\epawlows\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\epawlows\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_MovieAPI.-279019656.00" t="ExcludeRecursive" />
-    <e p="C:\Users\epawlows\Downloads\MovieAPI\MovieAPI" t="IncludeFlat">
+    <e p="C:\Users\epawl\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\epawl\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\epawl\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\nunit.engine.api.dll" t="Include" />
+    <e p="C:\Users\epawl\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\nunit.engine.dll" t="Include" />
+    <e p="C:\Users\epawl\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\NUnit3.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\epawl\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\NUnit3.TestAdapter.pdb" t="Include" />
+    <e p="C:\Users\epawl\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\epawl\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_MovieAPI.270539278.00" t="ExcludeRecursive" />
+    <e p="C:\Users\epawl\OneDrive\Pulpit\Zadania C#\Repositories\MovieAPI\MovieAPI" t="IncludeFlat">
       <e p="MovieAPI" t="IncludeRecursive">
         <e p="ApiControllerBase.cs" t="Include" />
         <e p="appsettings.local.json" t="Include" />
@@ -39,6 +39,7 @@
         <e p="IOmdbClient.cs" t="Include" />
         <e p="Models" t="Include">
           <e p="Movie.cs" t="Include" />
+          <e p="Ratings.cs" t="Include" />
           <e p="SearchResult.cs" t="Include" />
         </e>
         <e p="MovieApi.Omdb.Client.csproj" t="IncludeRecursive" />
@@ -52,25 +53,84 @@
         <e p="OmdbApiSettings.cs" t="Include" />
         <e p="OmdbClient.cs" t="Include" />
       </e>
+      <e p="MovieApi.Repositories" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DatabaseSettings.cs" t="Include" />
+        <e p="DbContext.cs" t="Include" />
+        <e p="Interfaces" t="Include">
+          <e p="IDbContext.cs" t="Include" />
+          <e p="IUserRepository.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="User.cs" t="Include" />
+        </e>
+        <e p="MovieApi.Repositories.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="MovieApi.Repositories.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Queries" t="Include">
+          <e p="UserQueries.cs" t="Include" />
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="UserRepository.cs" t="Include" />
+        </e>
+      </e>
       <e p="MovieApi.Services" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="IMovieService.cs" t="Include" />
+        <e p="Exceptions" t="Include">
+          <e p="IncorrectPasswordConfirmationException.cs" t="Include" />
+          <e p="MailTakenException.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IMovieService.cs" t="Include" />
+          <e p="IUserService.cs" t="Include" />
+        </e>
         <e p="Mappers" t="Include">
           <e p="IMovieMapper.cs" t="Include" />
+          <e p="MappingStrategy" t="Include">
+            <e p="IMappingMoviePropertyStrategy.cs" t="Include" />
+            <e p="IMovieMapperStrategy.cs" t="Include" />
+            <e p="MovieMapperStrategy.cs" t="Include" />
+            <e p="Parsers" t="Include">
+              <e p="IPersonParser.cs" t="Include" />
+              <e p="PersonParser.cs" t="Include" />
+            </e>
+            <e p="PropertyStrategies" t="Include">
+              <e p="IntegerMappingMoviePropertyStrategy.cs" t="Include" />
+              <e p="PersonMappingMoviePropertyStrategy.cs" t="Include" />
+              <e p="RatingsMappringMoviePropertyStrategy.cs" t="Include" />
+              <e p="RuntimeInMinutesMappingPropertyStrategy.cs" t="Include" />
+              <e p="StringMappingMoviePropertyStrategy.cs" t="Include" />
+              <e p="StringToDateTimeMappingPropertyStrategy.cs" t="Include" />
+              <e p="StringToListMappingMoviePropertyStrategy.cs" t="Include" />
+              <e p="StringToStringMappingMoviePropertyStrategy.cs" t="Include" />
+            </e>
+          </e>
           <e p="MovieMapper.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="FoundMoviesDto.cs" t="Include" />
+          <e p="JustTimeNoDateConverter.cs" t="Include" />
           <e p="MovieDto.cs" t="Include" />
+          <e p="Person.cs" t="Include" />
+          <e p="UserDto.cs" t="Include" />
+          <e p="UserSignUpDto.cs" t="Include" />
         </e>
         <e p="MovieApi.Services.csproj" t="IncludeRecursive" />
-        <e p="MovieService.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.0" t="Include">
               <e p="MovieApi.Services.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="MovieService.cs" t="Include" />
+          <e p="UserService.cs" t="Include" />
         </e>
         <e p="Settings" t="Include">
           <e p="ApiSettings.cs" t="Include" />
@@ -80,11 +140,6 @@
       <e p="MovieApiTests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="MovieApiTests.csproj" t="IncludeRecursive" />
-        <e p="MovieMapperTests.cs" t="Include" />
-        <e p="MovieModels" t="Include">
-          <e p="TestMovie.cs" t="Include" />
-          <e p="TestMovieDto.cs" t="Include" />
-        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -92,7 +147,13 @@
             </e>
           </e>
         </e>
-        <e p="TestBase.cs" t="Include" />
+        <e p="Services" t="Include">
+          <e p="MovieMapperTests.cs" t="Include" />
+          <e p="MovieMapperTests.Models.cs" t="Include" />
+          <e p="MovieMapperTests.ModelTests.cs" t="Include" />
+          <e p="MovieModelTests.cs" t="Include" />
+          <e p="TestBase.cs" t="Include" />
+        </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>

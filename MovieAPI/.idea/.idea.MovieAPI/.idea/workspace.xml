@@ -22,7 +22,43 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f205a539-d565-4f90-9fac-da8232474aba" name="Default Changelist" comment="" />
+    <list default="true" id="f205a539-d565-4f90-9fac-da8232474aba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieAPI/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovieAPI/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovieAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieAPI.sln" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieAPI/MovieAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/MovieAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieAPI/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieAPI/appsettings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieAPI/appsettings.local.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbApiSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbApiSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Repositories/DatabaseSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Repositories/DatabaseSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Repositories/DbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Repositories/DbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Repositories/Interfaces/IDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Repositories/Interfaces/IDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Repositories/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Repositories/Interfaces/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Repositories/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Repositories/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Repositories/MovieApi.Repositories.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Repositories/MovieApi.Repositories.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Repositories/Queries/UserQueries.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Repositories/Queries/UserQueries.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Repositories/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Repositories/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Exceptions/IncorrectPasswordConfirmationException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Exceptions/IncorrectPasswordConfirmationException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Exceptions/MailTakenException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Exceptions/MailTakenException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Interfaces/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Interfaces/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Mappers/MappingStrategy/MovieMapperStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Mappers/MappingStrategy/MovieMapperStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Mappers/MappingStrategy/Parsers/IPersonParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Mappers/MappingStrategy/Parsers/IPersonParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Mappers/MappingStrategy/Parsers/PersonParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Mappers/MappingStrategy/Parsers/PersonParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Mappers/MappingStrategy/PropertyStrategies/IntegerMappingMoviePropertyStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Mappers/MappingStrategy/PropertyStrategies/IntegerMappingMoviePropertyStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Models/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Models/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Models/UserSignUpDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Models/UserSignUpDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/MovieApi.Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/MovieApi.Services.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi.Services/Settings/ApiSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Services/Settings/ApiSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApiTests/Services/MovieMapperTests.ModelTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApiTests/Services/MovieMapperTests.ModelTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApiTests/Services/MovieMapperTests.Models.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApiTests/Services/MovieMapperTests.Models.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApiTests/Services/MovieMapperTests.PropertyStrategies.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApiTests/Services/MovieMapperTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApiTests/Services/MovieMapperTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApiTests/Services/MovieModelTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApiTests/Services/MovieModelTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApiTests/Services/TestBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApiTests/Services/TestBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,17 +66,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B2641CF8-C2C2-4492-8CC6-29D4D53FF2A0/14/Parameter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B2641CF8-C2C2-4492-8CC6-29D4D53FF2A0/1D/Ensure.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F680C866-D120-4163-9634-EBD842255BE9/F3/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B2641CF8-C2C2-4492-8CC6-29D4D53FF2A0/17/RestRequest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/36/String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/25F/AsyncMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/66/Char.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/2E/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/3DC/List.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -69,6 +94,7 @@
         <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/Models/SearchResult.cs" />
         <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/Models/Movie.cs" />
         <option value="$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs" />
+        <option value="$PROJECT_DIR$/MovieApiTests/Services/TestBase.cs" />
       </list>
     </option>
   </component>
@@ -95,7 +121,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Launch Settings Profile.MovieAPI">
     <configuration name="MovieAPI" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MovieAPI/MovieAPI.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -126,6 +152,7 @@
       <workItem from="1601624020629" duration="5999000" />
       <workItem from="1601635052548" duration="543000" />
       <workItem from="1601871773560" duration="79000" />
+      <workItem from="1605188877093" duration="1547000" />
     </task>
     <servers />
   </component>
@@ -254,6 +281,10 @@
     </state>
     <state width="1323" height="161" key="GridCell.Tab.4.right/0.0.1366.728@0.0.1366.728" timestamp="1601635599020" />
     <state width="2442" height="514" key="GridCell.Tab.4.right/68.28.2492.1412/2560.0.1920.1080@68.28.2492.1412" timestamp="1600954532731" />
+    <state x="2381" y="164" key="SettingsEditor" timestamp="1605188966084">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2381" y="164" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605188966084" />
     <state width="683" height="364" key="XDebugger.FullValuePopup" timestamp="1601627471488">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -270,14 +301,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/MovieApi.Omdb.Client/OmdbClient.cs</url>
           <line>46</line>
-          <properties documentPath="C:\Users\epawlows\Downloads\MovieAPI\MovieAPI\MovieApi.Omdb.Client\OmdbClient.cs" initialLine="46">
-            <startOffsets>
-              <option value="1683" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2129" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\epawlows\Downloads\MovieAPI\MovieAPI\MovieApi.Omdb.Client\OmdbClient.cs" initialLine="46" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

@@ -4,11 +4,15 @@
     {
         public object Process(object property)
         {
-            var value = property.ToString();
+            var value = property.ToString().Replace(",", string.Empty);
 
-            if (int.TryParse(value, out var number))
-                return number;
-            return null;
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return null;
+            }
+
+            int.TryParse(value, out var number);
+            return number;
         }
     }
 }
