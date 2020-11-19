@@ -1,19 +1,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using MovieApi.Omdb.Client;
 using MovieApi.Services.Interfaces;
-using MovieApi.Services.Mappers;
 using MovieApi.Services.Models;
+using Npgsql.TypeMapping;
 
 namespace MovieApi.Services.Services
 {
     public class MovieService : IMovieService
     {
         private readonly IOmdbClient _client;
-        private readonly IMovieMapper _mapper;
+        private readonly IMapper _mapper;
 
-        public MovieService(IOmdbClient client, IMovieMapper mapper)
+        public MovieService(
+            IOmdbClient client,
+            IMapper mapper)
         {
             _client = client;
             _mapper = mapper;
@@ -36,7 +39,7 @@ namespace MovieApi.Services.Services
         {
             var movie = await _client.SingleMovieByTitle(title);
 
-            return await _mapper.MovieToDtoMapper(movie);
+            return _mapper.Map<MovieDto>(movie);
         }
     }
 }

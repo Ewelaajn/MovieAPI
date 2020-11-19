@@ -33,6 +33,27 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="Startup.DependencyInjection.cs" t="Include" />
+        <e p="Startup.Swagger.cs" t="Include" />
+      </e>
+      <e p="MovieApi.Middleware" t="IncludeRecursive">
+        <e p="AutoMapper" t="Include">
+          <e p="MovieProfile.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MovieApi.Middleware.csproj" t="IncludeRecursive" />
+        <e p="MovieParsers" t="Include">
+          <e p="IMovieParser.cs" t="Include" />
+          <e p="MovieParser.cs" t="Include" />
+          <e p="MovieParser.Person.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="MovieApi.Middleware.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="MovieApi.Omdb.Client" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -88,29 +109,6 @@
         <e p="Interfaces" t="Include">
           <e p="IMovieService.cs" t="Include" />
           <e p="IUserService.cs" t="Include" />
-        </e>
-        <e p="Mappers" t="Include">
-          <e p="IMovieMapper.cs" t="Include" />
-          <e p="MappingStrategy" t="Include">
-            <e p="IMappingMoviePropertyStrategy.cs" t="Include" />
-            <e p="IMovieMapperStrategy.cs" t="Include" />
-            <e p="MovieMapperStrategy.cs" t="Include" />
-            <e p="Parsers" t="Include">
-              <e p="IPersonParser.cs" t="Include" />
-              <e p="PersonParser.cs" t="Include" />
-            </e>
-            <e p="PropertyStrategies" t="Include">
-              <e p="IntegerMappingMoviePropertyStrategy.cs" t="Include" />
-              <e p="PersonMappingMoviePropertyStrategy.cs" t="Include" />
-              <e p="RatingsMappringMoviePropertyStrategy.cs" t="Include" />
-              <e p="RuntimeInMinutesMappingPropertyStrategy.cs" t="Include" />
-              <e p="StringMappingMoviePropertyStrategy.cs" t="Include" />
-              <e p="StringToDateTimeMappingPropertyStrategy.cs" t="Include" />
-              <e p="StringToListMappingMoviePropertyStrategy.cs" t="Include" />
-              <e p="StringToStringMappingMoviePropertyStrategy.cs" t="Include" />
-            </e>
-          </e>
-          <e p="MovieMapper.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="FoundMoviesDto.cs" t="Include" />

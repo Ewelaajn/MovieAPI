@@ -12,7 +12,7 @@ namespace MovieApiTests.Services
     [TestFixture]
     public partial class MovieMapperTests
     {
-        [Test]
+        /*[Test]
         [TestCase("FirstTitle", "FirstTitle")]
         [TestCase("SecondTitle", "SecondTitle")]
         public void StringMappingMoviePropertyStrategy_ValidTitleSupplied_ReturnsTitle
@@ -119,6 +119,6 @@ namespace MovieApiTests.Services
         {
             var result = _personParser.ParsePerson(people);
             result.Should().BeEquivalentTo(expectedResult);
-        }
+        }*/
     }
 }

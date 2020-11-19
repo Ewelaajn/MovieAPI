@@ -3,10 +3,6 @@ using System.Reflection;
 using Autofac;
 using Moq;
 using MovieApi.Omdb.Client.Models;
-using MovieApi.Services.Mappers;
-using MovieApi.Services.Mappers.MappingStrategy;
-using MovieApi.Services.Mappers.MappingStrategy.Parsers;
-using MovieApi.Services.Mappers.MappingStrategy.PropertyStrategies;
 using MovieApi.Services.Models;
 using Newtonsoft.Json;
 using RestSharp;
@@ -32,8 +28,8 @@ namespace MovieApiTests
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<MovieMapper>();
-            builder.RegisterType<PersonParser>();
+            /*builder.RegisterType<MovieMapper>();
+            builder.RegisterType<PersonParser>();*/
             /*builder.RegisterAssemblyTypes(Assembly.Load(nameof(MovieApi.Services)))
                 .Where(t => t.));*/
 

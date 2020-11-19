@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using MovieApi.Services.Models;
 
-namespace MovieApi.Services.Mappers.MappingStrategy.Parsers
+namespace MovieApi.Middleware.MovieParsers
 {
-    public class PersonParser : IPersonParser
+    public partial class MovieParser
     {
-        public List<Person> ParsePerson(string people)
+        private List<Person> ParsePerson(string people)
         {
             var splitedPeople = people.Split(',')
                 .Select(person => person.Trim());
@@ -35,5 +36,6 @@ namespace MovieApi.Services.Mappers.MappingStrategy.Parsers
 
             return newPeople;
         }
+
     }
 }
