@@ -91,7 +91,7 @@ namespace MovieApiTests.Services
             Production = "Paramount Pictures"
         };
 
-        public static IEnumerable<TestCaseData> PersonParserTestCaseSource
+        public static IEnumerable<TestCaseData> StringToPersonTestCaseSource
         {
             get
             {
@@ -123,7 +123,7 @@ namespace MovieApiTests.Services
             }
         }
         
-        public static IEnumerable<TestCaseData> StringToDateTimeStrategySource
+        public static IEnumerable<TestCaseData> StringToDateTimeTestCaseSource
         {
             get
             {
@@ -133,12 +133,12 @@ namespace MovieApiTests.Services
             }
         }
 
-        public static IEnumerable<TestCaseData> StringToListStrategySource
+        public static IEnumerable<TestCaseData> StringToListTestCaseSource
         {
             get
             {
-                yield return new TestCaseData("English, Polish, Spanish", new List<String>{"English", "Polish", "Spanish"});
-                yield return new TestCaseData("Thriller, Horror", new List<String>{"Thriller", "Horror"});
+                yield return new TestCaseData("English, Polish, Spanish", new List<string>{"English", "Polish", "Spanish"});
+                yield return new TestCaseData("Thriller, Horror", new List<string>{"Thriller", "Horror"});
                 yield return new TestCaseData("Poland", new List<string>{"Poland"});
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using MovieApi.Omdb.Client.Models;
@@ -20,7 +21,7 @@ namespace MovieApi.Omdb.Client
             _client.Timeout = _settings.ConnectionTimeout;
         }
 
-        public async Task<SearchResult> SearchVideoByTitle(string title, int page = 1, string type = "movie")
+        public async Task<IEnumerable<SigleFoundItem>> SearchVideoByTitle(string title, int page = 1, string type = "movie")
         {
             var request = new RestRequest(Method.GET)
                 .AddQueryParameter(_settings.QueryParams.ApiKey, _settings.ApiKey)
@@ -31,7 +32,7 @@ namespace MovieApi.Omdb.Client
                 .AddHeader("Accept", "application/json");
 
 
-            var response = await _client.GetAsync<SearchResult>(request);
+            var response = await _client.GetAsync<SigleFoundItem>(request);
 
             return response;
         }

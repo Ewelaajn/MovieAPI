@@ -21,7 +21,9 @@ namespace MovieAPI
             services.AddScoped<IDbContext, DbContext>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IMovieParser, MovieParser>();
-            services.AddAutoMapper(typeof(MovieProfile));
+            services.AddScoped<IBasePropertyParser, BasePropertyParser>();
+            services.AddScoped<IMovieParser, MovieParser>();
+            services.AddAutoMapper(typeof(MovieProfile),typeof(SearchedMoviesProfile));
         }
 
         private void RegisterOptions(ref IServiceCollection services)

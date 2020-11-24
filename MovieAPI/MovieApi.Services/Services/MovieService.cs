@@ -25,14 +25,8 @@ namespace MovieApi.Services.Services
         public async Task<IEnumerable<FoundMoviesDto>> SearchMoviesByTitle(string title, int page = 1)
         {
             var movieResults = await _client.SearchVideoByTitle(title, page);
-            return movieResults.Search.Select(movie => new FoundMoviesDto
-            {
-                Title = movie.Title,
-                ImdbID = movie.ImdbID,
-                Poster = movie.Poster,
-                Type = movie.Type,
-                Year = movie.Year
-            });
+
+            return _mapper.Map<IEnumerable<FoundMoviesDto>>(movieResults);
         }
 
         public async Task<MovieDto> SingleMovieByTitle(string title)

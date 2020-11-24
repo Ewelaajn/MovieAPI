@@ -9,6 +9,7 @@ namespace MovieApi.Middleware.AutoMapper
     {
         public MovieProfile()
         {
+            IBasePropertyParser propertyParser = new BasePropertyParser();
             IMovieParser movieParser = new MovieParser();
             CreateMap<Movie, MovieDto>()
 
@@ -45,23 +46,22 @@ namespace MovieApi.Middleware.AutoMapper
                 // RuntimeParser
                 .ForMember(dest => dest.RuntimeInMinutes,
                     opt => opt.MapFrom(movie => movieParser.ParseRuntimeToInt(movie.Runtime)))
-                
+
+                // The same types in normal and dto model
                 .ForMember(dest => dest.Title,
-                    opt => opt.MapFrom(movie => movie.Title))
+                    opt => opt.MapFrom(movie => propertyParser.Parse(movie.Title)))
                 .ForMember(dest => dest.Rated,
-                    opt => opt.MapFrom(movie => movie.Rated))
+                    opt => opt.MapFrom(movie => propertyParser.Parse(movie.Rated)))
                 .ForMember(dest => dest.Awards,
-                    opt => opt.MapFrom(movie => movie.Awards))
+                    opt => opt.MapFrom(movie => propertyParser.Parse(movie.Awards)))
+                .ForMember(dest => dest.ImdbId,
+                    opt => opt.MapFrom(movie => propertyParser.Parse(movie.ImdbId)))
+                .ForMember(dest => dest.Production,
+                    opt => opt.MapFrom(movie => propertyParser.Parse(movie.Production)))
                 .ForMember(dest => dest.Ratings,
                     opt => opt.MapFrom(movie => movie.Ratings))
                 .ForMember(dest => dest.ImdbRating,
-                    opt => opt.MapFrom(movie => movie.ImdbRating))
-                .ForMember(dest => dest.ImdbId,
-                    opt => opt.MapFrom(movie => movie.ImdbId))
-                .ForMember(dest => dest.Production,
-                    opt => opt.MapFrom(movie => movie.Production));
-
-
+                    opt => opt.MapFrom(movie => movie.ImdbRating));
         }
     }
 }

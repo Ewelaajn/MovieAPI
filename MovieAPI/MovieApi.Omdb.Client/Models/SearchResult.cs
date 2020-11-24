@@ -4,11 +4,6 @@ using RestSharp.Deserializers;
 
 namespace MovieApi.Omdb.Client.Models
 {
-    public class SearchResult
-    {
-        public List<SigleFoundItem> Search { get; set; }
-    }
-
     public class SigleFoundItem
     {
         public string Title { get; set; }

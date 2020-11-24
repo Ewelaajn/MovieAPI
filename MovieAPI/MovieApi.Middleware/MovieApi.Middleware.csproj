@@ -9,6 +9,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\MovieApi.Omdb.Client\MovieApi.Omdb.Client.csproj" />
       <ProjectReference Include="..\MovieApi.Services\MovieApi.Services.csproj" />
     </ItemGroup>
 
