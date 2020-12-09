@@ -58,6 +58,8 @@ namespace MovieApi.Middleware.AutoMapper
                     opt => opt.MapFrom(movie => propertyParser.Parse(movie.ImdbId)))
                 .ForMember(dest => dest.Production,
                     opt => opt.MapFrom(movie => propertyParser.Parse(movie.Production)))
+                .ForMember(dest => dest.Poster,
+                    opt => opt.MapFrom(movie => propertyParser.Parse(movie.Poster)))
                 .ForMember(dest => dest.Ratings,
                     opt => opt.MapFrom(movie => movie.Ratings))
                 .ForMember(dest => dest.ImdbRating,

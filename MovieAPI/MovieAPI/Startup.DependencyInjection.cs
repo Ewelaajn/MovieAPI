@@ -20,10 +20,11 @@ namespace MovieAPI
             services.AddScoped<IOmdbClient, OmdbClient>();
             services.AddScoped<IDbContext, DbContext>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IMovieParser, MovieParser>();
             services.AddScoped<IBasePropertyParser, BasePropertyParser>();
             services.AddScoped<IMovieParser, MovieParser>();
-            services.AddAutoMapper(typeof(MovieProfile),typeof(SearchedMoviesProfile));
+            services.AddAutoMapper(typeof(MovieProfile), typeof(SearchedMoviesProfile));
         }
 
         private void RegisterOptions(ref IServiceCollection services)

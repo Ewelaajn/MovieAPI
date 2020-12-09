@@ -18,7 +18,7 @@ namespace MovieApi.Middleware.MovieParsers
 
             var newPeople = splitedNames
                 .Select(names => names
-                    .Where(name => !name.StartsWith("(")).ToList())
+                    .Where(name => !name.StartsWith("(") || !name.EndsWith(")")).ToList())
                 .Select(names =>
                 {
                     if (names.Count == 3)

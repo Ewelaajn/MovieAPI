@@ -12,6 +12,15 @@ namespace MovieApiTests.Services
     [TestFixture]
     public partial class MovieMapperTests
     {
+        [Test]
+        public void Test()
+        {
+            var movie = Movie;
+            var expectedResult = MovieDto;
+            var result = _mapper.Map<MovieDto>(movie);
+            result.Should().BeEquivalentTo(expectedResult);
+        }
+
         // Test for all properties which are strings in normal and dto model, checked on property "title"
         // Contains: Title, Rated, Awards, ImdbId, Production
         [Test]
@@ -108,7 +117,7 @@ namespace MovieApiTests.Services
         [Test]
         [TestCaseSource(nameof(StringToListTestCaseSource))]
         public void AutoMapperMovieStringToList_ValidStringSupplied_ReturnsListOfString
-            (string list, List<String> expectedResult)
+            (string list, List<string> expectedResult)
         {
             var movie = Movie;
             movie.Genre = list;
@@ -136,7 +145,7 @@ namespace MovieApiTests.Services
         // Test for RunTime Parser
         [Test]
         [TestCase("150 min", 150)]
-        [TestCase("90min", 90)]
+        [TestCase("90 min", 90)]
         [TestCase("100 min", 100)]
         public void AutoMapperMovieStringRunTimeToInt_ValidStringSupplied_ReturnsMinutesAsInt
             (string value, int? runtime)
@@ -164,7 +173,7 @@ namespace MovieApiTests.Services
             result.Should().BeNull();
         }
 
-        // Test for all properties which are string and parse to list of person, chcked on property "actor"
+        // Test for all properties which are string and parse to list of person, checked on property "actor"
         // Contains: Actor, Writer, Director
         [Test]
         [TestCaseSource(nameof(StringToPersonTestCaseSource))]

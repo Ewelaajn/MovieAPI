@@ -30,5 +30,6 @@ namespace MovieApi.Omdb.Client.Models
         public string Production { get; set; }
         public string Website { get; set; }
         public string Response { get; set; }
+        public string Poster { get; set; }
     }
 }

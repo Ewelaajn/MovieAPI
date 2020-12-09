@@ -32,5 +32,6 @@ namespace MovieApi.Services.Models
         public DateTime? DVD { get; set; }
 
         public string Production { get; set; }
+        public string Poster { get; set; }
     }
 }

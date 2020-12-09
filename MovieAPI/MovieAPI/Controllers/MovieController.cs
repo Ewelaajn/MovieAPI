@@ -30,5 +30,22 @@ namespace MovieAPI.Controllers
 
             return Ok(movie);
         }
+
+        [HttpGet]
+        [Route("~/search/movie_by_imdb_id/{imdbId}")]
+        public async Task<IActionResult> MovieByImdbId(string imdbId)
+        {
+            var movie = await _service.SingleMovieByImdbId(imdbId);
+
+            return Ok(movie);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddMovie([FromBody] string imdbIdb, string mail, double? rating)
+        {
+            var movie = await _service.AddedMovie(imdbIdb, mail, rating);
+
+            return Accepted("You have added new movie to db:", movie);
+        }
     }
 }

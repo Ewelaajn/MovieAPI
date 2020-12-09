@@ -6,9 +6,11 @@ namespace MovieApi.Omdb.Client
 {
     public interface IOmdbClient
     {
-        Task<IEnumerable<SigleFoundItem>> SearchVideoByTitle(string title, int page = 1, string type = "movie");
+        Task<SearchResult> SearchVideoByTitle(string title, int page = 1, string type = "movie");
 
         /*Task<Movie> GetMovieById(int id, string type="movie");*/
         Task<Movie> SingleMovieByTitle(string title, string type = "movie");
+
+        Task<Movie> SingleMovieByImdbId(string imdbId);;
     }
 }

@@ -12,6 +12,15 @@
                             SELECT password FROM film.user WHERE mail = @mail";
 
         public const string IsMailTaken = @"
-                            SELECT TRUE FROM film.user WHERE mail = @mails";
+                            SELECT TRUE FROM film.user WHERE mail = @mail";
+
+        public const string GetUserByMail = @"
+                            SELECT id AS Id,
+                                   nickname AS Nickname,
+                                   first_name AS firstName,
+                                   last_name AS lastName,
+                                   mail AS Mail
+                            FROM film.user
+                            WHERE mail = @mail";
     }
 }

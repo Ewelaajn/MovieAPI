@@ -21,7 +21,7 @@ namespace MovieApi.Omdb.Client
             _client.Timeout = _settings.ConnectionTimeout;
         }
 
-        public async Task<IEnumerable<SigleFoundItem>> SearchVideoByTitle(string title, int page = 1, string type = "movie")
+        public async Task<SearchResult> SearchVideoByTitle(string title, int page = 1, string type = "movie")
         {
             var request = new RestRequest(Method.GET)
                 .AddQueryParameter(_settings.QueryParams.ApiKey, _settings.ApiKey)
@@ -32,15 +32,13 @@ namespace MovieApi.Omdb.Client
                 .AddHeader("Accept", "application/json");
 
 
-            var response = await _client.GetAsync<SigleFoundItem>(request);
+            var response = await _client.GetAsync<SearchResult>(request);
 
             return response;
         }
 
         public async Task<Movie> SingleMovieByTitle(string title, string type = "movie")
         {
-            try
-            {
                 var request = new RestRequest(Method.GET)
                     .AddQueryParameter(_settings.QueryParams.ApiKey, _settings.ApiKey)
                     .AddQueryParameter(_settings.QueryParams.SingleMovieByTitle, title)
@@ -50,12 +48,18 @@ namespace MovieApi.Omdb.Client
 
                 var response = await _client.GetAsync<Movie>(request);
                 return response;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+        }
+
+        public async Task<Movie> SingleMovieByImdbId(string imdbId)
+        {
+            var request = new RestRequest(Method.GET)
+                .AddQueryParameter(_settings.QueryParams.ApiKey, _settings.ApiKey)
+                .AddQueryParameter(_settings.QueryParams.SingleMovieByImdbId, imdbId)
+                .AddQueryParameter(_settings.QueryParams.DataTypeToReturn, "json")
+                .AddHeader("Accept", "application/json");
+
+            var response = await _client.GetAsync<Movie>(request);
+            return response;
         }
     }
 }
