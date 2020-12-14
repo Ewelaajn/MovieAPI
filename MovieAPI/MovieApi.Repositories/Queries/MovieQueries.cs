@@ -45,5 +45,26 @@ namespace MovieApi.Repositories.Queries
         public const string InsertIntoMovieGenre = @"
                             INSERT INTO film.movie_genre (movie_id, genre_id),
                             VALUES (@movieId, genreId)";
+
+        public const string GetMovieIdByTitle = @"
+                            SELECT id AS Id FROM film.movie WHERE title = @title";
+
+        public const string GetMovieByTitle = @"SELECT
+                            id AS Id,
+                            title AS Title,
+                            release_date AS ReleaseDate,
+                            runtime AS Runtime,
+                            imdb_rating AS ImdbRating,
+                            poster AS Poster
+                            FROM film.movie
+                            WHERE title = @title";
+
+        public const string ChangeRating = @"
+                            UPDATE film.watched
+                            SET rating = @rating
+                            WHERE title = @title";
+
+        public const string CheckIfMovieIsInWatchedTable = @"
+                            SELECT EXISTS(SELECT 1 FROM film.watched WHERE title=@title)";
     }
 }

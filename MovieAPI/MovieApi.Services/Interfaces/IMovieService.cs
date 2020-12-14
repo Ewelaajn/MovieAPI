@@ -10,5 +10,6 @@ namespace MovieApi.Services.Interfaces
         Task<MovieDto> SingleMovieByTitle(string title);
         Task<MovieDto> SingleMovieByImdbId(string imdbId);
         Task<MovieDto> AddedMovie(string imdbId, string mail, double? rating);
+        Task<WatchedMovieDto> UpdateRatingInWatched(string mail, string title, double rating);
     }
 }

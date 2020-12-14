@@ -45,5 +45,41 @@ namespace MovieApi.Repositories.Repositories
             return await _dbContext.Connection.QueryFirstOrDefaultAsync<ToWatch>(MovieQueries.InsertIntoToWatch,
                 new { userId, movieId });
         }
+
+        public async Task<DbMovie> GetMovieByTitle(string title)
+        {
+            return await _dbContext.Connection.QueryFirstOrDefaultAsync<DbMovie>(
+                MovieQueries.GetMovieByTitle, new {title});
+        }
+
+        public async Task<DbMovie> UpdateRatingInWatched(string mail, string title, double rating)
+        {
+            var movie = await _dbContext.Connection.QueryFirstOrDefaultAsync<DbMovie>(
+                MovieQueries.GetMovieByTitle, new { title });
+            var user = await _dbContext.Connection.QueryFirstOrDefaultAsync<User>(
+                UserQueries.GetUserByMail, new { mail });
+
+            if (await _dbContext.Connection.QueryFirstOrDefaultAsync<bool>(
+                MovieQueries.CheckIfMovieIsInWatchedTable, new {title}))
+            {
+                await _dbContext.Connection.ExecuteAsync(
+                    MovieQueries.ChangeRating, new {title, rating});
+            }
+            else
+            {
+                await _dbContext.Connection.ExecuteAsync(
+                    MovieQueries.InsertIntoWatched, new { userId = user.Id, movieId = movie.Id, rating });
+
+            }
+
+            return new DbMovie()
+            {
+                Title = movie.Title,
+                ReleaseDate = movie.ReleaseDate,
+                Runtime = movie.Runtime,
+                ImdbRating = movie.ImdbRating,
+                Poster = movie.Poster
+            };
+        }
     }
 }

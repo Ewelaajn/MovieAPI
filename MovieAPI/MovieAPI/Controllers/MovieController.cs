@@ -41,11 +41,21 @@ namespace MovieAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddMovie([FromBody] string imdbIdb, string mail, double? rating)
+        public async Task<IActionResult> AddMovie(string imdbIdb, string mail, double? rating)
         {
             var movie = await _service.AddedMovie(imdbIdb, mail, rating);
 
             return Accepted("You have added new movie to db:", movie);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateRatingInWatched(string mail, string title, double rating)
+        {
+            var updatedMovie = await _service.UpdateRatingInWatched(mail, title, rating);
+            if (updatedMovie == null)
+                return NotFound("User or Movie with those credentials does not exists in database!");
+            
+            return Accepted("Resource updated successfully.", updatedMovie);
         }
     }
 }

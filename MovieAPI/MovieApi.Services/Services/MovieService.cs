@@ -75,5 +75,20 @@ namespace MovieApi.Services.Services
 
             return movieDto;
         }
+
+        public async Task<WatchedMovieDto> UpdateRatingInWatched(string mail, string title, double rating)
+        {
+            var movie = await _movieRepository.UpdateRatingInWatched(mail, title, rating);
+
+            return new WatchedMovieDto()
+            {
+                Title = movie.Title,
+                ReleaseDate = movie.ReleaseDate,
+                Runtime = movie.Runtime,
+                ImdbRating = movie.ImdbRating,
+                Poster = movie.Poster,
+                Rating = rating
+            };
+        }
     }
 }
