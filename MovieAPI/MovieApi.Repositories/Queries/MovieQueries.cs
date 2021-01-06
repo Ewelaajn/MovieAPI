@@ -59,6 +59,16 @@ namespace MovieApi.Repositories.Queries
                             FROM film.movie
                             WHERE title = @title";
 
+        public const string GetMoviesByIds = @"SELECT
+                            id AS Id,
+                            title AS Title,
+                            release_date AS ReleaseDate,
+                            runtime AS Runtime,
+                            imdb_rating AS ImdbRating,
+                            poster AS Poster
+                            FROM film.movie
+                            WHERE id = ANY(@ids)";
+
         public const string ChangeRating = @"
                             UPDATE film.watched
                             SET rating = @rating
@@ -66,5 +76,10 @@ namespace MovieApi.Repositories.Queries
 
         public const string CheckIfMovieIsInWatchedTable = @"
                             SELECT EXISTS(SELECT 1 FROM film.watched WHERE title=@title)";
+
+        public const string GetTop50WithTies = @"
+                            SELECT * FROM film.watched
+                            ORDER BY rating DESC
+                            FETCH FIRST 50 ROWS WITH TIES";
     }
 }

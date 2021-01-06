@@ -40,12 +40,20 @@ namespace MovieAPI.Controllers
             return Ok(movie);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetTop50WatchedMovies()
+        {
+            var movies = await _service.GetTop50WatchedMovies();
+
+            return Ok(movies);
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddMovie(string imdbIdb, string mail, double? rating)
         {
             var movie = await _service.AddedMovie(imdbIdb, mail, rating);
 
-            return Accepted("You have added new movie to db:", movie);
+            return Accepted("You have added new movie to database:", movie);
         }
 
         [HttpPut]

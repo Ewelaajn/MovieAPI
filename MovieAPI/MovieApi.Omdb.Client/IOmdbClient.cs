@@ -11,6 +11,6 @@ namespace MovieApi.Omdb.Client
         /*Task<Movie> GetMovieById(int id, string type="movie");*/
         Task<Movie> SingleMovieByTitle(string title, string type = "movie");
 
-        Task<Movie> SingleMovieByImdbId(string imdbId);;
+        Task<Movie> SingleMovieByImdbId(string imdbId);
     }
 }

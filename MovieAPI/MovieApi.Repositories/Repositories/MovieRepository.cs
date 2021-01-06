@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using System.Collections.Generic;
+using Dapper;
 using MovieApi.Omdb.Client.Models;
 using MovieApi.Repositories.Interfaces;
 using MovieApi.Repositories.Models;
@@ -49,7 +50,15 @@ namespace MovieApi.Repositories.Repositories
         public async Task<DbMovie> GetMovieByTitle(string title)
         {
             return await _dbContext.Connection.QueryFirstOrDefaultAsync<DbMovie>(
-                MovieQueries.GetMovieByTitle, new {title});
+                MovieQueries.GetMovieByTitle, new { title });
+        }
+
+        public async Task<IEnumerable<DbMovie>> GetMoviesByIds(List<int> ids)
+        {
+            var movies = await _dbContext.Connection.QueryAsync<DbMovie>(
+                MovieQueries.GetMoviesByIds, new { ids });
+
+            return movies;
         }
 
         public async Task<DbMovie> UpdateRatingInWatched(string mail, string title, double rating)
@@ -60,10 +69,10 @@ namespace MovieApi.Repositories.Repositories
                 UserQueries.GetUserByMail, new { mail });
 
             if (await _dbContext.Connection.QueryFirstOrDefaultAsync<bool>(
-                MovieQueries.CheckIfMovieIsInWatchedTable, new {title}))
+                MovieQueries.CheckIfMovieIsInWatchedTable, new { title }))
             {
                 await _dbContext.Connection.ExecuteAsync(
-                    MovieQueries.ChangeRating, new {title, rating});
+                    MovieQueries.ChangeRating, new { title, rating });
             }
             else
             {
@@ -80,6 +89,13 @@ namespace MovieApi.Repositories.Repositories
                 ImdbRating = movie.ImdbRating,
                 Poster = movie.Poster
             };
+        }
+
+        public async Task<IEnumerable<Watched>> GetTop50WatchedMovies()
+        {
+            var movies = await _dbContext.Connection.QueryAsync<Watched>(MovieQueries.GetTop50WithTies);
+
+            return movies;
         }
     }
 }

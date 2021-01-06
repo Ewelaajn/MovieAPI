@@ -90,5 +90,30 @@ namespace MovieApi.Services.Services
                 Rating = rating
             };
         }
+
+        public async Task<IEnumerable<RankingPositionDto>> GetTop50WatchedMovies()
+        {
+            var watchedMovies = await _movieRepository.GetTop50WatchedMovies();
+            var listOfWatchedMovies = watchedMovies.ToList();
+            var moviesIds = listOfWatchedMovies.Select(movie => movie.MovieId).ToList();
+            var movies = await _movieRepository.GetMoviesByIds(moviesIds);
+
+            var top50 = listOfWatchedMovies
+                .Select(movie => new TopMoviesDto()
+                {
+                    Title = movies.Single(m => m.Id == movie.MovieId).Title,
+                    Rating = movie.Rating
+                })
+                .GroupBy(topMovie => topMovie.Rating)
+                .OrderByDescending(topMovies => topMovies.Key)
+                .Select((top, index) => new RankingPositionDto()
+                {
+                    Position = index + 1,
+                    Movies = top.Select(mov => mov)
+                })
+                .ToList();
+
+            return top50;
+        }
     }
 }
