@@ -17,8 +17,8 @@
         public const string GetUserByMail = @"
                             SELECT id AS Id,
                                    nickname AS Nickname,
-                                   first_name AS firstName,
-                                   last_name AS lastName,
+                                   first_name AS FirstName,
+                                   last_name AS LastName,
                                    mail AS Mail
                             FROM film.user
                             WHERE mail = @mail";

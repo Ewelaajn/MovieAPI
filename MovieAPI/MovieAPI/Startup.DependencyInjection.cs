@@ -31,7 +31,7 @@ namespace MovieAPI
         {
             services.Configure<ApiSettings>(Configuration.GetSection("ApiSettings"));
             services.Configure<OmdbApiSettings>(Configuration.GetSection("ExternalApis:OmdbApi"));
-            services.Configure<DatabaseSettings>(Configuration.GetSection("Database"));
+            services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
         }
 
         private void RegisterMvc(ref IServiceCollection services)

@@ -26,7 +26,7 @@ namespace MovieApi.Repositories.Repositories
             var director = movie.Director;
 
             await _dbContext.Connection.ExecuteAsync(MovieQueries.InsertIntoDirector,
-                new {director});
+                new {fullname = director});
             await _dbContext.Connection.ExecuteAsync(MovieQueries.InsertIntoMovieDirector,
                 new {dbMovie.Id, director});
             await _dbContext.Connection.ExecuteAsync(MovieQueries.InsertIntoMovieGenre,
