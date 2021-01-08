@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MovieApi.Repositories.Queries
+﻿namespace MovieApi.Repositories.Queries
 {
     public static class MovieQueries
     {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using MovieApi.Services.Models;
 
@@ -36,7 +35,5 @@ namespace MovieApi.Middleware.MovieParsers
 
             return newPeople;
         }
-
-        
     }
 }

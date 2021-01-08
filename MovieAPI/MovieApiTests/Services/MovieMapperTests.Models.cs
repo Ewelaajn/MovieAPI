@@ -122,14 +122,14 @@ namespace MovieApiTests.Services
                 });
             }
         }
-        
+
         public static IEnumerable<TestCaseData> StringToDateTimeTestCaseSource
         {
             get
             {
-                yield return new TestCaseData("10-Jan-1950", new DateTime(10-01-1950));
-                yield return new TestCaseData("05-Feb-2010", new DateTime(05-01-2010));
-                yield return new TestCaseData("27-Aug-2020", new DateTime(27-08-2020));
+                yield return new TestCaseData("10-Jan-1950", new DateTime(10 - 01 - 1950));
+                yield return new TestCaseData("05-Feb-2010", new DateTime(05 - 01 - 2010));
+                yield return new TestCaseData("27-Aug-2020", new DateTime(27 - 08 - 2020));
             }
         }
 
@@ -137,9 +137,10 @@ namespace MovieApiTests.Services
         {
             get
             {
-                yield return new TestCaseData("English, Polish, Spanish", new List<string>{"English", "Polish", "Spanish"});
-                yield return new TestCaseData("Thriller, Horror", new List<string>{"Thriller", "Horror"});
-                yield return new TestCaseData("Poland", new List<string>{"Poland"});
+                yield return new TestCaseData("English, Polish, Spanish",
+                    new List<string> {"English", "Polish", "Spanish"});
+                yield return new TestCaseData("Thriller, Horror", new List<string> {"Thriller", "Horror"});
+                yield return new TestCaseData("Poland", new List<string> {"Poland"});
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using MovieApi.Omdb.Client.Models;
 using MovieApi.Repositories.Models;
-using System.Threading.Tasks;
 
 namespace MovieApi.Repositories.Interfaces
 {

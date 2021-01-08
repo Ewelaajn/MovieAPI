@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieApi.Omdb.Client", "Mov
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieApiTests", "MovieApiTests\MovieApiTests.csproj", "{9659ACA3-544C-42DA-9F17-A1FFBFEB250A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi.Repositories", "MovieApi.Repositories\MovieApi.Repositories.csproj", "{4AA14229-CD34-4533-B15B-D4262994E751}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieApi.Repositories", "MovieApi.Repositories\MovieApi.Repositories.csproj", "{4AA14229-CD34-4533-B15B-D4262994E751}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi.Middleware", "MovieApi.Middleware\MovieApi.Middleware.csproj", "{46F91ABA-8E3F-41A7-A280-C5083F3FBC6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieApi.Middleware", "MovieApi.Middleware\MovieApi.Middleware.csproj", "{46F91ABA-8E3F-41A7-A280-C5083F3FBC6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

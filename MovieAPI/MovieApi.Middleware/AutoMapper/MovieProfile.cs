@@ -20,7 +20,7 @@ namespace MovieApi.Middleware.AutoMapper
                     opt => opt.MapFrom(movie => movieParser.ParseStringToPerson(movie.Director)))
                 .ForMember(dest => dest.Writers,
                     opt => opt.MapFrom(movie => movieParser.ParseStringToPerson(movie.Writer)))
-                
+
                 // IntParser
                 .ForMember(dest => dest.Year,
                     opt => opt.MapFrom(movie => movieParser.ParseStringToInt(movie.Year)))
@@ -28,7 +28,7 @@ namespace MovieApi.Middleware.AutoMapper
                     opt => opt.MapFrom(movie => movieParser.ParseStringToInt(movie.Metascore)))
                 .ForMember(dest => dest.ImdbVotes,
                     opt => opt.MapFrom(movie => movieParser.ParseStringToInt(movie.ImdbVotes)))
-                
+
                 // StringToListParser
                 .ForMember(dest => dest.Genres,
                     opt => opt.MapFrom(movie => movieParser.ParseStringToList(movie.Genre)))
@@ -36,13 +36,13 @@ namespace MovieApi.Middleware.AutoMapper
                     opt => opt.MapFrom(movie => movieParser.ParseStringToList(movie.Language)))
                 .ForMember(dest => dest.Countries,
                     opt => opt.MapFrom(movie => movieParser.ParseStringToList(movie.Country)))
-                
+
                 // DateTimeParser
                 .ForMember(dest => dest.Released,
                     opt => opt.MapFrom(movie => movieParser.ParseStringToDateTime(movie.Released)))
                 .ForMember(dest => dest.DVD,
                     opt => opt.MapFrom(movie => movieParser.ParseStringToDateTime(movie.DVD)))
-                
+
                 // RuntimeParser
                 .ForMember(dest => dest.RuntimeInMinutes,
                     opt => opt.MapFrom(movie => movieParser.ParseRuntimeToInt(movie.Runtime)))

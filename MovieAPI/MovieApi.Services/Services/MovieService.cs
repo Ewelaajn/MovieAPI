@@ -14,8 +14,8 @@ namespace MovieApi.Services.Services
     {
         private readonly IOmdbClient _client;
         private readonly IMapper _mapper;
-        private readonly IUserRepository _userRepository;
         private readonly IMovieRepository _movieRepository;
+        private readonly IUserRepository _userRepository;
 
         public MovieService(
             IOmdbClient client,
@@ -57,8 +57,8 @@ namespace MovieApi.Services.Services
         {
             var movie = await _client.SingleMovieByImdbId(imdbId);
             var movieDto = _mapper.Map<MovieDto>(movie);
-            var user = _userRepository.GetUserByMail(mail);
-            var dbMovie = new DbMovie()
+            var user = await _userRepository.GetUserByMail(mail);
+            var dbMovie = new DbMovie
             {
                 Title = movieDto.Title,
                 ReleaseDate = movieDto.Released,
@@ -67,11 +67,12 @@ namespace MovieApi.Services.Services
                 Poster = movieDto.Poster
             };
 
+            await _movieRepository.InsertMovieValuesIntoDb(dbMovie, movie, user.Id);
+
             if (rating != null)
                 await _movieRepository.InsertIntoWatched(user.Id, dbMovie.Id, rating);
 
             await _movieRepository.InsertIntoToWatch(user.Id, dbMovie.Id);
-            await _movieRepository.InsertMovieValuesIntoDb(dbMovie, movie, user.Id);
 
             return movieDto;
         }
@@ -80,7 +81,7 @@ namespace MovieApi.Services.Services
         {
             var movie = await _movieRepository.UpdateRatingInWatched(mail, title, rating);
 
-            return new WatchedMovieDto()
+            return new WatchedMovieDto
             {
                 Title = movie.Title,
                 ReleaseDate = movie.ReleaseDate,
@@ -99,14 +100,14 @@ namespace MovieApi.Services.Services
             var movies = await _movieRepository.GetMoviesByIds(moviesIds);
 
             var top50 = listOfWatchedMovies
-                .Select(movie => new TopMoviesDto()
+                .Select(movie => new TopMoviesDto
                 {
                     Title = movies.Single(m => m.Id == movie.MovieId).Title,
                     Rating = movie.Rating
                 })
                 .GroupBy(topMovie => topMovie.Rating)
                 .OrderByDescending(topMovies => topMovies.Key)
-                .Select((top, index) => new RankingPositionDto()
+                .Select((top, index) => new RankingPositionDto
                 {
                     Position = index + 1,
                     Movies = top.Select(mov => mov)

@@ -41,6 +41,7 @@ namespace MovieAPI.Controllers
         }
 
         [HttpGet]
+        [Route("~/top50movies")]
         public async Task<IActionResult> GetTop50WatchedMovies()
         {
             var movies = await _service.GetTop50WatchedMovies();
@@ -62,7 +63,7 @@ namespace MovieAPI.Controllers
             var updatedMovie = await _service.UpdateRatingInWatched(mail, title, rating);
             if (updatedMovie == null)
                 return NotFound("User or Movie with those credentials does not exists in database!");
-            
+
             return Accepted("Resource updated successfully.", updatedMovie);
         }
     }

@@ -5,7 +5,6 @@ using Microsoft.Extensions.Hosting;
 
 namespace MovieAPI
 {
-    // TODO: Learn markdown language to create readme 
     public class Program
     {
         public static IConfiguration Configuration { get; } = new ConfigurationBuilder()

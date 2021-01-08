@@ -1,7 +1,4 @@
 ﻿using MovieApi.Middleware.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MovieApi.Middleware.MovieParsers
 {

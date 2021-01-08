@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Reflection;
 using Autofac;
 using Moq;
 using MovieApi.Omdb.Client.Models;

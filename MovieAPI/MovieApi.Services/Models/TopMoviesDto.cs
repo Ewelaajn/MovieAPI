@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace MovieApi.Services.Models
 {
@@ -9,6 +7,7 @@ namespace MovieApi.Services.Models
         public int Position { get; set; }
         public IEnumerable<TopMoviesDto> Movies { get; set; }
     }
+
     public class TopMoviesDto
     {
         public string Title { get; set; }

@@ -1,19 +1,8 @@
-using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using MovieApi.Middleware.AutoMapper;
-using MovieApi.Middleware.MovieParsers;
-using MovieApi.Omdb.Client;
-using MovieApi.Repositories;
-using MovieApi.Repositories.Interfaces;
-using MovieApi.Repositories.Repositories;
-using MovieApi.Services.Interfaces;
-using MovieApi.Services.Services;
-using MovieApi.Services.Settings;
 
 namespace MovieAPI
 {
@@ -36,7 +25,7 @@ namespace MovieAPI
 
             ConfigureSwagger(ref services);
         }
-        
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();

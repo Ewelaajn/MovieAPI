@@ -11,6 +11,5 @@ namespace MovieApi.Middleware.MovieParsers
         DateTime? ParseStringToDateTime(string value);
         List<string> ParseStringToList(string value);
         int? ParseRuntimeToInt(string value);
-        
     }
 }

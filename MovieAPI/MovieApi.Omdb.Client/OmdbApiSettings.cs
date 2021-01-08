@@ -17,5 +17,6 @@ namespace MovieApi.Omdb.Client
         public string PageNumber { get; set; }
         public string DataTypeToReturn { get; set; }
         public string SingleMovieByTitle { get; set; }
+        public string SingleMovieByImdbId { get; set; }
     }
 }

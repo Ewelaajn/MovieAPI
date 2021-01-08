@@ -19,13 +19,13 @@ namespace MovieApi.Repositories.Repositories
         public async Task<User> CreateUser(User user)
         {
             return await _dbContext.Connection.QueryFirstAsync<User>(UserQueries.CreateUser,
-                new { user.NickName, user.FirstName, user.LastName, user.Mail, user.Password });
+                new {user.NickName, user.FirstName, user.LastName, user.Mail, user.Password});
         }
 
         public async Task<User> GetUserByMail(string mail)
         {
             return await _dbContext.Connection.QueryFirstOrDefaultAsync<User>(UserQueries.GetUserByMail,
-                new { mail });
+                new {mail});
         }
 
         public Task<string> FetchPassword(string mail)
@@ -36,7 +36,7 @@ namespace MovieApi.Repositories.Repositories
         public async Task<bool> IsMailTaken(string mail)
         {
             return await _dbContext.Connection.QueryFirstOrDefaultAsync<bool>
-                (UserQueries.IsMailTaken, new { mail });
+                (UserQueries.IsMailTaken, new {mail});
         }
     }
 }

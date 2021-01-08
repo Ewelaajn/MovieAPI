@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using MovieApi.Omdb.Client.Models;
 using RestSharp;
@@ -39,15 +37,15 @@ namespace MovieApi.Omdb.Client
 
         public async Task<Movie> SingleMovieByTitle(string title, string type = "movie")
         {
-                var request = new RestRequest(Method.GET)
-                    .AddQueryParameter(_settings.QueryParams.ApiKey, _settings.ApiKey)
-                    .AddQueryParameter(_settings.QueryParams.SingleMovieByTitle, title)
-                    .AddQueryParameter(_settings.QueryParams.SearchByType, type)
-                    .AddQueryParameter(_settings.QueryParams.DataTypeToReturn, "json")
-                    .AddHeader("Accept", "application/json");
+            var request = new RestRequest(Method.GET)
+                .AddQueryParameter(_settings.QueryParams.ApiKey, _settings.ApiKey)
+                .AddQueryParameter(_settings.QueryParams.SingleMovieByTitle, title)
+                .AddQueryParameter(_settings.QueryParams.SearchByType, type)
+                .AddQueryParameter(_settings.QueryParams.DataTypeToReturn, "json")
+                .AddHeader("Accept", "application/json");
 
-                var response = await _client.GetAsync<Movie>(request);
-                return response;
+            var response = await _client.GetAsync<Movie>(request);
+            return response;
         }
 
         public async Task<Movie> SingleMovieByImdbId(string imdbId)
