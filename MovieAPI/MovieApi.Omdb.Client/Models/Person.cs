@@ -1,4 +1,4 @@
-﻿namespace MovieApi.Services.Models
+﻿namespace MovieApi.Omdb.Client.Models
 {
     public class Person
     {

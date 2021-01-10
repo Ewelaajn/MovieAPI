@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FluentAssertions;
+using MovieApi.Omdb.Client.Models;
 using MovieApi.Services.Models;
 using NUnit.Framework;
 

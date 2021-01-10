@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using MovieApi.Omdb.Client.Models;
 using RestSharp.Deserializers;
+using MovieApi.Repositories.Models;
 
 namespace MovieApi.Services.Models
 {
@@ -15,12 +17,12 @@ namespace MovieApi.Services.Models
         public DateTime? Released { get; set; }
 
         public int? RuntimeInMinutes { get; set; }
-        public IEnumerable<string> Genres { get; set; }
-        public IEnumerable<Person> Director { get; set; }
-        public IEnumerable<Person> Writers { get; set; }
-        public IEnumerable<Person> Actors { get; set; }
-        public IEnumerable<string> Languages { get; set; }
-        public IEnumerable<string> Countries { get; set; }
+        public List<string> Genres { get; set; }
+        public List<Person> Director { get; set; }
+        public List<Person> Writers { get; set; }
+        public List<Person> Actors { get; set; }
+        public List<string> Languages { get; set; }
+        public List<string> Countries { get; set; }
         public string Awards { get; set; }
         public List<Ratings> Ratings { get; set; }
         public int? Metascore { get; set; }

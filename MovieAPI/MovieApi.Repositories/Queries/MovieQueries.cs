@@ -5,23 +5,23 @@
         public const string InsertIntoMovie = @"
                             INSERT INTO film.movie (title, release_date, runtime, imdb_rating)
                             VALUES (@Title, @ReleaseDate, @Runtime, @ImdbRating)
-                            RETURNING id AS Id, release_date As ReleaseDate, 
+                            RETURNING id AS Id, release_date AS ReleaseDate, 
                             runtime AS Runtime, imdb_rating AS ImdbRating";
 
         public const string InsertIntoDirector = @"
-                            INSERT INTO film.director (full_name)
-                            VALUES (@fullName)
-                            RETURNING id AS Id, full_name AS FullName";
+                            INSERT INTO film.director (first_name, last_name)
+                            VALUES (@firstName, @lastName)
+                            RETURNING id";
 
         public const string InsertIntoGenre = @"
                             INSERT INTO film.genre (type)
                             VALUES (@type)
-                            RETURNING id AS Id, type AS Type";
+                            RETURNING id";
 
         public const string InsertIntoWatched = @"
                             INSERT INTO film.watched (user_id, movie_id, rating)
                             VALUES (@userId, @movieId, @rating)
-                            ReTURNING user_id AS UserId, movie_id AS MovieId, rating AS Rating";
+                            RETURNING user_id AS UserId, movie_id AS MovieId, rating AS Rating";
 
         public const string InsertIntoToWatch = @"
                             INSERT INTO film.to_watch (user_id, movie_id)
@@ -40,7 +40,7 @@
 
         public const string InsertIntoMovieGenre = @"
                             INSERT INTO film.movie_genre (movie_id, genre_id),
-                            VALUES (@movieId, genreId)";
+                            VALUES (@movieId, @genreId)";
 
         public const string GetMovieIdByTitle = @"
                             SELECT id AS Id FROM film.movie WHERE title = @title";
