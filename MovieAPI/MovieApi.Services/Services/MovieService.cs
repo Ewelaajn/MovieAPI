@@ -7,6 +7,7 @@ using MovieApi.Repositories.Interfaces;
 using MovieApi.Repositories.Models;
 using MovieApi.Services.Interfaces;
 using MovieApi.Services.Models;
+using Npgsql;
 
 namespace MovieApi.Services.Services
 {

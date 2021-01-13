@@ -5,7 +5,7 @@
         public const string InsertIntoMovie = @"
                             INSERT INTO film.movie (title, release_date, runtime, imdb_rating)
                             VALUES (@Title, @ReleaseDate, @Runtime, @ImdbRating)
-                            RETURNING id AS Id, release_date AS ReleaseDate, 
+                            RETURNING id AS Id, title AS Title, release_date AS ReleaseDate, 
                             runtime AS Runtime, imdb_rating AS ImdbRating";
 
         public const string InsertIntoDirector = @"
@@ -16,7 +16,7 @@
         public const string InsertIntoGenre = @"
                             INSERT INTO film.genre (type)
                             VALUES (@type)
-                            RETURNING id";
+                            RETURNING id AS Id, type AS Type";
 
         public const string InsertIntoWatched = @"
                             INSERT INTO film.watched (user_id, movie_id, rating)
@@ -39,8 +39,9 @@
                             RETURNING movie_id As MovieId, director_id AS DirectorId";
 
         public const string InsertIntoMovieGenre = @"
-                            INSERT INTO film.movie_genre (movie_id, genre_id),
-                            VALUES (@movieId, @genreId)";
+                            INSERT INTO film.movie_genre (movie_id, genre_id)
+                            VALUES (@movieId, @genreId)
+                            RETURNING movie_id AS MovieId, genre_id AS GenreId";
 
         public const string GetMovieIdByTitle = @"
                             SELECT id AS Id FROM film.movie WHERE title = @title";
