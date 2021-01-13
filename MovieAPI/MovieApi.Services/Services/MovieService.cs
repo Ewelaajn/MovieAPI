@@ -58,7 +58,8 @@ namespace MovieApi.Services.Services
             var movie = await _client.SingleMovieByImdbId(imdbId);
             var movieDto = _mapper.Map<MovieDto>(movie);
             var user = await _userRepository.GetUserByMail(mail);
-            
+            var listOfGenres = new List<Genre>();
+
             var dbMovie = new DbMovie
             {
                 Title = movieDto.Title,
@@ -72,14 +73,21 @@ namespace MovieApi.Services.Services
 
             if (rating != null)
                 await _movieRepository.InsertIntoWatched(user.Id, insertedMovie.Id, rating);
+            else
+                await _movieRepository.InsertIntoToWatch(user.Id, insertedMovie.Id);
 
-            await _movieRepository.InsertIntoToWatch(user.Id, insertedMovie.Id);
-            var director = _movieRepository.InsertIntoDirector(movieDto.Director);
-            
-            var genres = _movieRepository.InsertIntoGenre(movieDto.Genres);
-            var genresIds = genres.Select(genre => genre.Id).ToList();
 
-            _movieRepository.InsertIntoMovieGenre(insertedMovie.Id, genresIds);
+            foreach (var director in movieDto.Director)
+                await _movieRepository.InsertIntoDirector(director.FirstName, director.LastName);
+
+
+            foreach (var genre in movieDto.Genres)
+            {
+                var gen = await _movieRepository.InsertIntoGenre(genre);
+                listOfGenres.Add(gen);
+            }
+
+            foreach (var genre in listOfGenres) await _movieRepository.InsertIntoMovieGenre(insertedMovie.Id, genre.Id);
 
             return movieDto;
         }

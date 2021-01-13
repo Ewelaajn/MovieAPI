@@ -10,6 +10,9 @@
     <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
     <PackageReference Include="Moq" Version="4.14.5" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="nunit" Version="3.12.0" />
@@ -22,6 +25,11 @@
     <ProjectReference Include="..\MovieApi.Middleware\MovieApi.Middleware.csproj" />
     <ProjectReference Include="..\MovieApi.Omdb.Client\MovieApi.Omdb.Client.csproj" />
     <ProjectReference Include="..\MovieApi.Services\MovieApi.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TestQueries\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>

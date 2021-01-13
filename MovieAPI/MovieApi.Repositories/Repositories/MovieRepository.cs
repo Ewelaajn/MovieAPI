@@ -25,10 +25,10 @@ namespace MovieApi.Repositories.Repositories
             var addedMovie = await _dbContext.Connection.QueryFirstOrDefaultAsync<DbMovie>(
                 MovieQueries.InsertIntoMovie, new
                 {
-                    dbMovie.Title, 
-                    dbMovie.ReleaseDate, 
-                    dbMovie.Runtime, 
-                    dbMovie.ImdbRating, 
+                    dbMovie.Title,
+                    dbMovie.ReleaseDate,
+                    dbMovie.Runtime,
+                    dbMovie.ImdbRating,
                     dbMovie.Poster
                 });
 
@@ -38,54 +38,51 @@ namespace MovieApi.Repositories.Repositories
         public async Task<Watched> InsertIntoWatched(int userId, int movieId, double? rating)
         {
             return await _dbContext.Connection.QueryFirstOrDefaultAsync<Watched>(MovieQueries.InsertIntoWatched,
-                new {userId, movieId, rating});
+                new { userId, movieId, rating });
         }
 
         public async Task<ToWatch> InsertIntoToWatch(int userId, int movieId)
         {
             return await _dbContext.Connection.QueryFirstOrDefaultAsync<ToWatch>(MovieQueries.InsertIntoToWatch,
-                new {userId, movieId});
+                new { userId, movieId });
         }
 
-        public List<Task<Genre>> InsertIntoGenre(List<string> genres)
+        public async Task<Genre> InsertIntoGenre(string genre)
         {
-            var insertedGenres = genres
-                .Select(async genre => await _dbContext.Connection.QueryFirstAsync<Genre>(
-                    MovieQueries.InsertIntoGenre, new {type = genre})).ToList();
+            var insertedGenre = await _dbContext.Connection.QueryFirstAsync<Genre>(
+                MovieQueries.InsertIntoGenre, new { type = genre });
 
-            return insertedGenres;
-        }
-
-
-        public List<Task<Director>> InsertIntoDirector(List<Person> directors)
-        {
-            var insertedDirectors = directors
-                .Select(async director => await _dbContext.Connection.QueryFirstAsync<Director>(
-                    MovieQueries.InsertIntoDirector, new {director.FirstName, director.LastName})).ToList();
-
-            return insertedDirectors;
+            return insertedGenre;
         }
 
 
-        public List<Task<MovieGenre>> InsertIntoMovieGenre(int movieId, List<int> genreIds)
+        public async Task<Director> InsertIntoDirector(string firstName, string lastName)
         {
-            var insertedMovieGenres = genreIds
-                .Select(async id => await _dbContext.Connection.QueryFirstAsync<MovieGenre>(
-                    MovieQueries.InsertIntoMovieGenre, new {movieId, genreId = id})).ToList();
+            var insertedDirector = await _dbContext.Connection.QueryFirstAsync<Director>(
+                MovieQueries.InsertIntoDirector, new { firstName, lastName });
 
-            return insertedMovieGenres;
+            return insertedDirector;
+        }
+
+
+        public async Task<MovieGenre> InsertIntoMovieGenre(int movieId, int genreId)
+        {
+            var insertedMovieGenre = await _dbContext.Connection.QueryFirstAsync<MovieGenre>(
+                MovieQueries.InsertIntoMovieGenre, new { movieId, genreId });
+
+            return insertedMovieGenre;
         }
 
         public async Task<DbMovie> GetMovieByTitle(string title)
         {
             return await _dbContext.Connection.QueryFirstOrDefaultAsync<DbMovie>(
-                MovieQueries.GetMovieByTitle, new {title});
+                MovieQueries.GetMovieByTitle, new { title });
         }
 
         public async Task<IEnumerable<DbMovie>> GetMoviesByIds(List<int> ids)
         {
             var movies = await _dbContext.Connection.QueryAsync<DbMovie>(
-                MovieQueries.GetMoviesByIds, new {ids});
+                MovieQueries.GetMoviesByIds, new { ids });
 
             return movies;
         }
@@ -93,17 +90,17 @@ namespace MovieApi.Repositories.Repositories
         public async Task<DbMovie> UpdateRatingInWatched(string mail, string title, double rating)
         {
             var movie = await _dbContext.Connection.QueryFirstOrDefaultAsync<DbMovie>(
-                MovieQueries.GetMovieByTitle, new {title});
+                MovieQueries.GetMovieByTitle, new { title });
             var user = await _dbContext.Connection.QueryFirstOrDefaultAsync<User>(
-                UserQueries.GetUserByMail, new {mail});
+                UserQueries.GetUserByMail, new { mail });
 
             if (await _dbContext.Connection.QueryFirstOrDefaultAsync<bool>(
-                MovieQueries.CheckIfMovieIsInWatchedTable, new {title}))
+                MovieQueries.CheckIfMovieIsInWatchedTable, new { title }))
                 await _dbContext.Connection.ExecuteAsync(
-                    MovieQueries.ChangeRating, new {title, rating});
+                    MovieQueries.ChangeRating, new { title, rating });
             else
                 await _dbContext.Connection.ExecuteAsync(
-                    MovieQueries.InsertIntoWatched, new {userId = user.Id, movieId = movie.Id, rating});
+                    MovieQueries.InsertIntoWatched, new { userId = user.Id, movieId = movie.Id, rating });
 
             return new DbMovie
             {
