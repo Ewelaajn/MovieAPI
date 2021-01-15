@@ -1,8 +1,9 @@
-﻿using Npgsql;
+﻿using MovieApi.Repositories.Interfaces;
+using Npgsql;
 
-namespace MovieApiTests.Database.DbTools
+namespace MovieApiTests.Integration.DbTools
 {
-    public class TestDb
+    public class TestDb : IDbContext
     {
         public TestDb()
         {

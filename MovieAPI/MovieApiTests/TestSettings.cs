@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+
 namespace MovieApiTests
 {
     public class TestSettings

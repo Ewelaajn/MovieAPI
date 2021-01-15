@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using Dapper;
 using Npgsql;
 
-namespace MovieApiTests.Database.DbManager
+namespace MovieApiTests.Integration.DbManager
 {
     public class PostgresManager
     {
@@ -35,15 +34,17 @@ namespace MovieApiTests.Database.DbManager
 
         public void CreateTestDb()
         {
-            using var connection = new NpgsqlConnection(_postgresConnectionString);
-            connection.Execute(PostgresManagerQueries.CreateDb,
-                new
-                {
-                    host = _host,
-                    database = _db,
-                    user = _user,
-                    password = _pswd
-                });
+            using (var connection = new NpgsqlConnection(_postgresConnectionString))
+            {
+                connection.Execute(PostgresManagerQueries.CreateDb,
+                    new
+                    {
+                        host = _host,
+                        database = _db,
+                        user = _user,
+                        password = _pswd
+                    });
+            }
         }
 
         public void DropTestDb()
@@ -79,7 +80,7 @@ namespace MovieApiTests.Database.DbManager
 
             using var connection = new NpgsqlConnection(_testDatabaseConnectionString);
             connection.Execute(_schema);
-            FillDbWithTestData(connection);
+            /*FillDbWithTestData(connection);*/
         }
 
         public void ResetSchema()
@@ -90,13 +91,13 @@ namespace MovieApiTests.Database.DbManager
             using var connection = new NpgsqlConnection(_testDatabaseConnectionString);
             connection.Execute(PostgresManagerQueries.ResetSchema);
             connection.Execute(_schema);
-            FillDbWithTestData(connection);
+            /*FillDbWithTestData(connection);*/
         }
 
-        private void FillDbWithTestData(NpgsqlConnection connection)
+        /*private void FillDbWithTestData(NpgsqlConnection connection)
         {
             var query = File.ReadAllText(Settings.DbManager.TestQueriesFileLocation);
             connection.Execute(query);
-        }
+        }*/
     }
 }

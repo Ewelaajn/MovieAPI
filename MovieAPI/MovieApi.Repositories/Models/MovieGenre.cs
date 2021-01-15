@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MovieApi.Repositories.Models
+﻿namespace MovieApi.Repositories.Models
 {
     public class MovieGenre
     {

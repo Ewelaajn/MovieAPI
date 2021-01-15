@@ -7,7 +7,6 @@ using MovieApi.Repositories.Interfaces;
 using MovieApi.Repositories.Models;
 using MovieApi.Services.Interfaces;
 using MovieApi.Services.Models;
-using Npgsql;
 
 namespace MovieApi.Services.Services
 {
@@ -54,7 +53,7 @@ namespace MovieApi.Services.Services
             return _mapper.Map<MovieDto>(movie);
         }
 
-        public async Task<MovieDto> AddedMovie(string imdbId, string mail, double? rating)
+        public async Task<MovieDto> AddMovie(string imdbId, string mail, double? rating)
         {
             var movie = await _client.SingleMovieByImdbId(imdbId);
             var movieDto = _mapper.Map<MovieDto>(movie);
@@ -72,6 +71,9 @@ namespace MovieApi.Services.Services
 
             var insertedMovie = await _movieRepository.InsertMovieValuesIntoDb(dbMovie);
 
+            if (insertedMovie == null)
+                return null;
+
             if (rating != null)
                 await _movieRepository.InsertIntoWatched(user.Id, insertedMovie.Id, rating);
             else
@@ -88,7 +90,8 @@ namespace MovieApi.Services.Services
                 listOfGenres.Add(gen);
             }
 
-            foreach (var genre in listOfGenres) await _movieRepository.InsertIntoMovieGenre(insertedMovie.Id, genre.Id);
+            foreach (var genre in listOfGenres)
+                await _movieRepository.InsertIntoMovieGenre(insertedMovie.Id, genre.Id);
 
             return movieDto;
         }

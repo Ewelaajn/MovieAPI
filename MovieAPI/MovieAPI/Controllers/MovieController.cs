@@ -52,9 +52,11 @@ namespace MovieAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddMovie(string imdbIdb, string mail, double? rating)
         {
-            var movie = await _service.AddedMovie(imdbIdb, mail, rating);
+            var movie = await _service.AddMovie(imdbIdb, mail, rating);
+            if (movie == null)
+                return BadRequest("This Movie is already in database!");
 
-            return Accepted("You have added new movie to database:", movie);
+            return Accepted("You have added a new movie to database:", movie);
         }
 
         [HttpPut]

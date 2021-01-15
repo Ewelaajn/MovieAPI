@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using MovieApi.Middleware.Extensions;
 using MovieApi.Omdb.Client.Models;
-using MovieApi.Services.Models;
 
 namespace MovieApi.Middleware.MovieParsers
 {

@@ -24,12 +24,18 @@
   <ItemGroup>
     <ProjectReference Include="..\MovieApi.Middleware\MovieApi.Middleware.csproj" />
     <ProjectReference Include="..\MovieApi.Omdb.Client\MovieApi.Omdb.Client.csproj" />
+    <ProjectReference Include="..\MovieApi.Repositories\MovieApi.Repositories.csproj" />
     <ProjectReference Include="..\MovieApi.Services\MovieApi.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="TestQueries\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,3 @@
-using System;
-using Newtonsoft.Json;
-
 namespace MovieApi.Services.Models
 {
     public class FoundMoviesDto

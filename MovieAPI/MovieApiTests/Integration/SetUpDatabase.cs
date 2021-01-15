@@ -1,7 +1,7 @@
-﻿using MovieApiTests.Database.DbManager;
+﻿using MovieApiTests.Integration.DbManager;
 using NUnit.Framework;
 
-namespace MovieApiTests.Database
+namespace MovieApiTests.Integration
 {
     [SetUpFixture]
     public class SetUpDatabase

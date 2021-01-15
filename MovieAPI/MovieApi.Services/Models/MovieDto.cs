@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using MovieApi.Omdb.Client.Models;
 using RestSharp.Deserializers;
-using MovieApi.Repositories.Models;
 
 namespace MovieApi.Services.Models
 {

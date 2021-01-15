@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using MovieApi.Omdb.Client.Models;
-using MovieApi.Services.Models;
 
 namespace MovieApi.Middleware.MovieParsers
 {

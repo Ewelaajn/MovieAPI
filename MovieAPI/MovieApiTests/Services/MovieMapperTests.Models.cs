@@ -127,9 +127,9 @@ namespace MovieApiTests.Services
         {
             get
             {
-                yield return new TestCaseData("10-Jan-1950", new DateTime(10 - 01 - 1950));
-                yield return new TestCaseData("05-Feb-2010", new DateTime(05 - 01 - 2010));
-                yield return new TestCaseData("27-Aug-2020", new DateTime(27 - 08 - 2020));
+                yield return new TestCaseData("10-Jan-1950", new DateTime(1950, 01, 10));
+                yield return new TestCaseData("05-Feb-2010", new DateTime(2010, 02, 05));
+                yield return new TestCaseData("27-Aug-2020", new DateTime(2020, 08, 27));
             }
         }
 
