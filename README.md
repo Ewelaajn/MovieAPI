@@ -1,2 +1,2 @@
 # MovieAPI
-Data for every movie enthusiast
+API for every movie enthusiast
