@@ -13,6 +13,8 @@ namespace MovieApi.Services.Services
     public class MovieService : IMovieService
     {
         private readonly IOmdbClient _client;
+        private readonly IDirectorRepository _directorRepository;
+        private readonly IGenreRepository _genreRepository;
         private readonly IMapper _mapper;
         private readonly IMovieRepository _movieRepository;
         private readonly IUserRepository _userRepository;
@@ -21,12 +23,16 @@ namespace MovieApi.Services.Services
             IOmdbClient client,
             IMapper mapper,
             IUserRepository userRepository,
-            IMovieRepository movieRepository)
+            IMovieRepository movieRepository,
+            IGenreRepository genreRepository,
+            IDirectorRepository directorRepository)
         {
             _client = client;
             _mapper = mapper;
             _userRepository = userRepository;
             _movieRepository = movieRepository;
+            _genreRepository = genreRepository;
+            _directorRepository = directorRepository;
         }
 
         public async Task<List<FoundMoviesDto>> SearchMoviesByTitle(string title, int page = 1)
@@ -59,6 +65,7 @@ namespace MovieApi.Services.Services
             var movieDto = _mapper.Map<MovieDto>(movie);
             var user = await _userRepository.GetUserByMail(mail);
             var listOfGenres = new List<Genre>();
+            var listOfDirectors = new List<Director>();
 
             var dbMovie = new DbMovie
             {
@@ -81,17 +88,21 @@ namespace MovieApi.Services.Services
 
 
             foreach (var director in movieDto.Director)
-                await _movieRepository.InsertIntoDirector(director.FirstName, director.LastName);
-
+            {
+                var dir = await _directorRepository.InsertIntoDirector(director.FirstName, director.LastName);
+                listOfDirectors.Add(dir);
+            }
 
             foreach (var genre in movieDto.Genres)
             {
-                var gen = await _movieRepository.InsertIntoGenre(genre);
+                var gen = await _genreRepository.InsertIntoGenre(genre);
                 listOfGenres.Add(gen);
             }
 
             foreach (var genre in listOfGenres)
-                await _movieRepository.InsertIntoMovieGenre(insertedMovie.Id, genre.Id);
+                await _genreRepository.InsertIntoMovieGenre(insertedMovie.Id, genre.Id);
+            foreach (var director in listOfDirectors)
+                await _directorRepository.InsertIntoMovieDirector(insertedMovie.Id, director.Id);
 
             return movieDto;
         }

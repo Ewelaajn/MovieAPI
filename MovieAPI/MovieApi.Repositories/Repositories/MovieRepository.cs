@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dapper;
 using MovieApi.Repositories.Interfaces;
@@ -35,12 +34,10 @@ namespace MovieApi.Repositories.Repositories
 
                 return addedMovie;
             }
-            catch (PostgresException ex)
+            catch (PostgresException)
             {
-                Console.WriteLine(ex);
+                return null;
             }
-
-            return null;
         }
 
         public async Task<Watched> InsertIntoWatched(int userId, int movieId, double? rating)
@@ -53,32 +50,6 @@ namespace MovieApi.Repositories.Repositories
         {
             return await _dbContext.Connection.QueryFirstOrDefaultAsync<ToWatch>(MovieQueries.InsertIntoToWatch,
                 new {userId, movieId});
-        }
-
-        public async Task<Genre> InsertIntoGenre(string genre)
-        {
-            var insertedGenre = await _dbContext.Connection.QueryFirstAsync<Genre>(
-                MovieQueries.InsertIntoGenre, new {type = genre});
-
-            return insertedGenre;
-        }
-
-
-        public async Task<Director> InsertIntoDirector(string firstName, string lastName)
-        {
-            var insertedDirector = await _dbContext.Connection.QueryFirstAsync<Director>(
-                MovieQueries.InsertIntoDirector, new {firstName, lastName});
-
-            return insertedDirector;
-        }
-
-
-        public async Task<MovieGenre> InsertIntoMovieGenre(int movieId, int genreId)
-        {
-            var insertedMovieGenre = await _dbContext.Connection.QueryFirstAsync<MovieGenre>(
-                MovieQueries.InsertIntoMovieGenre, new {movieId, genreId});
-
-            return insertedMovieGenre;
         }
 
         public async Task<DbMovie> GetMovieByTitle(string title)

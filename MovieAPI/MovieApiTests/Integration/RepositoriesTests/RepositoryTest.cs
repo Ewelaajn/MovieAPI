@@ -1,8 +1,10 @@
 ﻿using Autofac;
 using MovieApi.Repositories.Interfaces;
-using MovieApi.Repositories.Repositories;
 using MovieApiTests.Integration.DbManager;
 using MovieApiTests.Integration.DbTools;
+using MovieApiTests.Integration.RepositoriesTests.DirectorRepository;
+using MovieApiTests.Integration.RepositoriesTests.GenreRepository;
+using MovieApiTests.Integration.RepositoriesTests.MovieRepository;
 using NUnit.Framework;
 
 namespace MovieApiTests.Integration.RepositoriesTests
@@ -12,15 +14,20 @@ namespace MovieApiTests.Integration.RepositoriesTests
         private readonly PostgresManager _postgresManager;
         protected readonly IContainer Container;
         protected readonly IDbContext DbContext;
-
+        protected IDirectorRepository DirectorRepository;
+        protected IGenreRepository GenreRepository;
         protected IMovieRepository MovieRepository;
 
         public RepositoryTest()
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<MovieRepository>()
+            builder.RegisterType<MovieRepositoryTests>()
                 .As<IMovieRepository>();
+            builder.RegisterType<DirectorRepositoryTests>()
+                .As<IDirectorRepository>();
+            builder.RegisterType<GenreRepositoryTests>()
+                .As<IGenreRepository>();
 
             builder.RegisterType<TestDb>()
                 .As<IDbContext>();

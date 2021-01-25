@@ -22,8 +22,8 @@ namespace MovieAPI
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IMovieParser, MovieParser>();
-            services.AddScoped<IBasePropertyParser, BasePropertyParser>();
-            services.AddScoped<IMovieParser, MovieParser>();
+            services.AddScoped<IGenreRepository, GenreRepository>();
+            services.AddScoped<IDirectorRepository, DirectorRepository>();
             services.AddAutoMapper(typeof(MovieProfile), typeof(SearchedMoviesProfile));
         }
 
