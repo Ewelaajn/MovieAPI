@@ -72,11 +72,10 @@ namespace MovieApi.Services.Services
                 Title = movieDto.Title,
                 ReleaseDate = movieDto.Released,
                 Runtime = movieDto.RuntimeInMinutes,
-                ImdbRating = movieDto.ImdbRating,
-                Poster = movieDto.Poster
+                ImdbRating = movieDto.ImdbRating
             };
 
-            var insertedMovie = await _movieRepository.InsertMovieValuesIntoDb(dbMovie);
+            var insertedMovie = await _movieRepository.InsertMovieIntoDb(dbMovie);
 
             if (insertedMovie == null)
                 return null;
@@ -117,7 +116,6 @@ namespace MovieApi.Services.Services
                 ReleaseDate = movie.ReleaseDate,
                 Runtime = movie.Runtime,
                 ImdbRating = movie.ImdbRating,
-                Poster = movie.Poster,
                 Rating = rating
             };
         }

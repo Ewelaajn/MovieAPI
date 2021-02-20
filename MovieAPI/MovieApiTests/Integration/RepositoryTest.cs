@@ -4,10 +4,9 @@ using MovieApiTests.Integration.DbManager;
 using MovieApiTests.Integration.DbTools;
 using MovieApiTests.Integration.RepositoriesTests.DirectorRepository;
 using MovieApiTests.Integration.RepositoriesTests.GenreRepository;
-using MovieApiTests.Integration.RepositoriesTests.MovieRepository;
 using NUnit.Framework;
 
-namespace MovieApiTests.Integration.RepositoriesTests
+namespace MovieApiTests.Integration
 {
     public class RepositoryTest
     {

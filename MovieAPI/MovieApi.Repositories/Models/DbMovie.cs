@@ -9,6 +9,5 @@ namespace MovieApi.Repositories.Models
         public DateTime? ReleaseDate { get; set; }
         public int? Runtime { get; set; }
         public double? ImdbRating { get; set; }
-        public string Poster { get; set; }
     }
 }

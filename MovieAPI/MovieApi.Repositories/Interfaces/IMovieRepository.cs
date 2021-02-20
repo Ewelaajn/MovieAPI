@@ -6,7 +6,7 @@ namespace MovieApi.Repositories.Interfaces
 {
     public interface IMovieRepository
     {
-        Task<DbMovie> InsertMovieValuesIntoDb(DbMovie dbMovie);
+        Task<DbMovie> InsertMovieIntoDb(DbMovie dbMovie);
         Task<Watched> InsertIntoWatched(int userId, int movieId, double? rating);
         Task<ToWatch> InsertIntoToWatch(int userId, int movieId);
         Task<DbMovie> GetMovieByTitle(string title);

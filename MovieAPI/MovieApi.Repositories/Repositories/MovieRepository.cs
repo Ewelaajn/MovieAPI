@@ -18,7 +18,7 @@ namespace MovieApi.Repositories.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<DbMovie> InsertMovieValuesIntoDb(DbMovie dbMovie)
+        public async Task<DbMovie> InsertMovieIntoDb(DbMovie dbMovie)
         {
             try
             {
@@ -28,8 +28,7 @@ namespace MovieApi.Repositories.Repositories
                         dbMovie.Title,
                         dbMovie.ReleaseDate,
                         dbMovie.Runtime,
-                        dbMovie.ImdbRating,
-                        dbMovie.Poster
+                        dbMovie.ImdbRating
                     });
 
                 return addedMovie;
@@ -86,8 +85,7 @@ namespace MovieApi.Repositories.Repositories
                 Title = movie.Title,
                 ReleaseDate = movie.ReleaseDate,
                 Runtime = movie.Runtime,
-                ImdbRating = movie.ImdbRating,
-                Poster = movie.Poster
+                ImdbRating = movie.ImdbRating
             };
         }
 
