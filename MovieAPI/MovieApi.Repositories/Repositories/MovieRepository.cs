@@ -22,7 +22,7 @@ namespace MovieApi.Repositories.Repositories
         {
             try
             {
-                var addedMovie = await _dbContext.Connection.QueryFirstOrDefaultAsync<DbMovie>(
+                var addedMovie = await _dbContext.Connection.QueryFirstAsync<DbMovie>(
                     MovieQueries.InsertIntoMovie, new
                     {
                         dbMovie.Title,
@@ -33,7 +33,7 @@ namespace MovieApi.Repositories.Repositories
 
                 return addedMovie;
             }
-            catch (PostgresException)
+            catch (PostgresException ex)
             {
                 return null;
             }
@@ -41,8 +41,17 @@ namespace MovieApi.Repositories.Repositories
 
         public async Task<Watched> InsertIntoWatched(int userId, int movieId, double? rating)
         {
-            return await _dbContext.Connection.QueryFirstOrDefaultAsync<Watched>(MovieQueries.InsertIntoWatched,
-                new {userId, movieId, rating});
+            try
+            {
+                return await _dbContext.Connection
+                .QueryFirstOrDefaultAsync<Watched>(MovieQueries.InsertIntoWatched,
+                new { userId, movieId, rating });
+            }
+            catch(PostgresException ex)
+            {
+                throw ex;
+            }
+              
         }
 
         public async Task<ToWatch> InsertIntoToWatch(int userId, int movieId)

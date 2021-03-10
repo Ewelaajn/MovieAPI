@@ -24,8 +24,8 @@ namespace MovieApi.Repositories.Repositories
 
         public async Task<User> GetUserByMail(string mail)
         {
-            return await _dbContext.Connection.QueryFirstOrDefaultAsync<User>(UserQueries.GetUserByMail,
-                new {mail});
+            return await _dbContext.Connection
+                .QueryFirstOrDefaultAsync<User>(UserQueries.GetUserByMail, new {mail});
         }
 
         public Task<string> FetchPassword(string mail)

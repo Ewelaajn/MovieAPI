@@ -77,10 +77,11 @@ namespace MovieApiTests.Integration.DbManager
         {
             if (string.IsNullOrEmpty(_schema))
                 BuildSchema();
-
-            using var connection = new NpgsqlConnection(_testDatabaseConnectionString);
-            connection.Execute(_schema);
-            /*FillDbWithTestData(connection);*/
+            using (var connection = new NpgsqlConnection(_testDatabaseConnectionString))
+            {
+                connection.Execute(_schema);
+                FillDbWithTestData(connection);
+            }
         }
 
         public void ResetSchema()
@@ -91,13 +92,13 @@ namespace MovieApiTests.Integration.DbManager
             using var connection = new NpgsqlConnection(_testDatabaseConnectionString);
             connection.Execute(PostgresManagerQueries.ResetSchema);
             connection.Execute(_schema);
-            /*FillDbWithTestData(connection);*/
+            FillDbWithTestData(connection);
         }
 
-        /*private void FillDbWithTestData(NpgsqlConnection connection)
+        private void FillDbWithTestData(NpgsqlConnection connection)
         {
             var query = File.ReadAllText(Settings.DbManager.TestQueriesFileLocation);
             connection.Execute(query);
-        }*/
+        }
     }
 }

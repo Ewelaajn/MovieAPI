@@ -45,35 +45,75 @@ CREATE TABLE film.watched
     user_id INTEGER NOT NULL,
 	movie_id INTEGER NOT NULL,
     rating NUMERIC,
-    UNIQUE(user_id, movie_id)
+    UNIQUE(user_id, movie_id),
+
+    CONSTRAINT fk_user
+      FOREIGN KEY(user_id)
+	  REFERENCES film.user(id),
+
+    CONSTRAINT fk_movie
+      FOREIGN KEY(movie_id)
+	  REFERENCES film.movie(id)
 );
 
 CREATE TABLE film.to_watch
 (
     user_id INTEGER NOT NULL,
 	movie_id INTEGER NOT NULL,
-	UNIQUE (user_id, movie_id)
+	UNIQUE (user_id, movie_id),
+
+    CONSTRAINT fk_user
+      FOREIGN KEY(user_id)
+	  REFERENCES film.user(id),
+
+    CONSTRAINT fk_movie
+      FOREIGN KEY(movie_id)
+	  REFERENCES film.movie(id)
 );
 
 CREATE TABLE film.favourites_directors
 (
     user_id INTEGER NOT NULL,
 	director_id INTEGER NOT NULL,
-	UNIQUE(user_id, director_id)
+	UNIQUE(user_id, director_id),
+
+    CONSTRAINT fk_user
+      FOREIGN KEY(user_id)
+	  REFERENCES film.user(id),
+
+    CONSTRAINT fk_director
+      FOREIGN KEY(director_id)
+	  REFERENCES film.director(id)
 );
 
 CREATE TABLE film.movie_director
 (
 	movie_id INTEGER NOT NULL,
 	director_id INTEGER NOT NULL,
-	UNIQUE(movie_id, director_id)
+	UNIQUE(movie_id, director_id),
+
+    CONSTRAINT fk_director
+      FOREIGN KEY(director_id)
+	  REFERENCES film.director(id),
+
+    CONSTRAINT fk_movie
+      FOREIGN KEY(movie_id)
+	  REFERENCES film.movie(id)
 );
 
 CREATE TABLE film.movie_genre
 (
 	movie_id INTEGER NOT NULL,
 	genre_id INTEGER NOT NULL,
-	UNIQUE(movie_id, genre_id)
+	UNIQUE(movie_id, genre_id),
+
+    CONSTRAINT fk_movie
+      FOREIGN KEY(movie_id)
+	  REFERENCES film.movie(id),
+
+    CONSTRAINT fk_genre
+      FOREIGN KEY(genre_id)
+	  REFERENCES film.genre(id)
 );
 
 

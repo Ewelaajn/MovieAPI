@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Autofac;
 using Dapper;
 using FluentAssertions;
 using MovieApi.Repositories.Interfaces;
 using MovieApi.Repositories.Models;
+using Npgsql;
 using NUnit.Framework;
 
 namespace MovieApiTests.Integration
@@ -18,7 +20,6 @@ namespace MovieApiTests.Integration
             MovieRepository = Container.Resolve<IMovieRepository>();
         }
 
-        // testedMethodName_testCase_expectedResult 
         [Test]
         public void DbConnection_WorksCorrectly_ReturnsData()
         {
@@ -34,10 +35,11 @@ namespace MovieApiTests.Integration
         }
 
         [Test]
-        [TestCaseSource(nameof(MovieRepositoryTests.DbMovieTestCaseSource))]
-        public void InsertMovieIntoDb_ValidParametersSupplied_ReturnsAddedMovie
+        [TestCaseSource(nameof(DbMovieTestCaseSource))]
+        public async Task InsertMovieIntoDb_ValidParametersSupplied_ReturnsAddedMovie
             (string title, DateTime? releaseDate, int? runtime, double? imdbRating)
         {
+
             var validInput = new DbMovie
             {
                 Title = title,
@@ -46,7 +48,7 @@ namespace MovieApiTests.Integration
                 ImdbRating = imdbRating
             };
 
-            var highestCurrentMovieId = Enumerable.Max<DbMovie>(AllMovies, movie => movie.Id);
+            var highestCurrentMovieId = AllMovies.Max(movie => movie.Id);
 
             var expectedResult = new DbMovie
             {
@@ -57,9 +59,63 @@ namespace MovieApiTests.Integration
                 ImdbRating = imdbRating
             };
 
-            var result = MovieRepository.InsertMovieIntoDb(validInput);
+            var result = await MovieRepository.InsertMovieIntoDb(validInput);
+          
 
             result.Should().BeEquivalentTo(expectedResult);
+        }
+
+        [Test]
+        public async Task InsertMovieIntoDb_MovieAlreadyExistsInDatabase_ReturnsNull()
+        {
+            var existingMovie = AllMovies.ElementAt(0);
+            var result = await MovieRepository.InsertMovieIntoDb(existingMovie);
+            
+            result.Should().BeNull();
+        }
+
+        [Test]
+        [TestCase(2, 1, 7.9)]
+        [TestCase(1, 3, 8.0)]
+        [TestCase(3, 1, 7.1)]
+        public async Task InsertIntoWatched_ValidParametersSupplied_ReturnsAddedMovie
+            (int userId, int movieId, double rating)
+        {
+            var expectedResult = new Watched
+            {
+                UserId = userId,
+                MovieId = movieId,
+                Rating = rating
+            };
+
+            var result = await MovieRepository.InsertIntoWatched(userId, movieId, rating);
+            result.Should().BeEquivalentTo(expectedResult);
+        }
+
+        [Test]
+        [TestCase(7, 1, 7.9)]
+        [TestCase(20, 2, 8.0)]
+        [TestCase(13, 1, 7.1)]
+        public async Task InsertIntoWatched_UserIdOrMovieIdDoesNotExist_ReturnsPostgresExceptionCode23503
+            (int userId, int movieId, double rating)
+        {
+            FluentActions.Invoking(async () => await MovieRepository
+           .InsertIntoWatched(userId, movieId, rating))
+                .Should().Throw<PostgresException>()
+                .Where(exception => int.Parse(exception.SqlState) == 23503);
+        }
+
+        [Test]
+        [TestCase(null, 1, 7.9)]
+        [TestCase(20, null, 8.0)]
+        [TestCase(13, null, null)]
+        public async Task InsertIntoWatched_OneTwoOrThreeParametersAreNull_ReturnsPostgresExceptionCode23503
+            (int userId, int movieId, double rating)
+        {
+            FluentActions.Invoking(async () => await MovieRepository
+           .InsertIntoWatched(userId, movieId, rating))
+                .Should().Throw<PostgresException>()
+                .Where(exception => int.Parse(exception.SqlState) == 23503);
         }
     }
 }

@@ -26,11 +26,11 @@
     <ProjectReference Include="..\MovieApi.Omdb.Client\MovieApi.Omdb.Client.csproj" />
     <ProjectReference Include="..\MovieApi.Repositories\MovieApi.Repositories.csproj" />
     <ProjectReference Include="..\MovieApi.Services\MovieApi.Services.csproj" />
+    <ProjectReference Include="..\MovieAPI\MovieAPI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Integration\RepositoriesTests\MovieRepository\" />
-    <Folder Include="TestQueries\" />
   </ItemGroup>
 
   <ItemGroup>

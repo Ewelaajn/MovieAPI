@@ -56,7 +56,7 @@ namespace MovieApiTests.Integration
             get
             {
                 yield return new TestCaseData("Angela's Ashes", new DateTime(2000, 01, 21), 145, 7.3);
-                yield return new TestCaseData("The Lord of the Rings: The Return of the King", new DateTime(2003,12,17), 201, 8.9);
+                yield return new TestCaseData("The Lord of the Rings", new DateTime(2003,12,17), 201, 8.9);
                 yield return new TestCaseData("CustomMovie", null, null, null);
             }
         }
